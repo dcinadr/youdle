@@ -10,17 +10,18 @@ angular.module('youdlePrototype', ['ionic'])
     var APPLICATION_ID = 'E11DA057-CE8C-0C31-FF22-59965520EB00',
         SECRET_KEY = '119B6906-EF1E-A3D9-FFD9-3CFA191F0B00',
         VERSION = 'v1'; //default application version;
-    Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
 
-    function test(args)
-    {
-      args = args || {};
-      this.message = args.message || "";
-    }
-
-    var dataStore = Backendless.Persistence.of(test);
-    var testObject = new test({message: "testing testing..."});
-    dataStore.save(testObject);
+    // Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
+    //
+    // function test(args)
+    // {
+    //   args = args || {};
+    //   this.message = args.message || "";
+    // }
+    //
+    // var dataStore = Backendless.Persistence.of(test);
+    // var testObject = new test({message: "testing testing..."});
+    // dataStore.save(testObject);
 
     $ionicPlatform.ready(function ()
     {
@@ -46,16 +47,26 @@ angular.module('youdlePrototype', ['ionic'])
 {
     $stateProvider
 
-        .state('login',
-        {
-          url: '/login',
-          templateUrl: 'app/login/login.html'
-        })
-        .state('home',
-        {
-            url: '/home',
-            templateUrl: 'app/home/home.html'
-        });
+      .state('intro',
+      {
+        url: '/intro',
+        templateUrl: 'app/intro/intro.html'
+      })
+      .state('signup',
+      {
+        url: '/signup',
+        templateUrl: 'app/signup/signup.html'
+      })
+      .state('login',
+      {
+        url: '/login',
+        templateUrl: 'app/login/login.html'
+      })
+      .state('home',
+      {
+          url: '/home',
+          templateUrl: 'app/home/home.html'
+      });
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/intro');
 })
