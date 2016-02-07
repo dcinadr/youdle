@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('youdlePrototype', ['ionic'])
+angular.module('youdlePrototype', ['ionic', 'youdlePrototype.api'])
 
 .run(function ($ionicPlatform)
 {
@@ -50,22 +50,23 @@ angular.module('youdlePrototype', ['ionic'])
       .state('intro',
       {
         url: '/intro',
-        templateUrl: 'app/intro/intro.html'
+        templateUrl: 'app/assets/intro/intro.html'
       })
       .state('signup',
       {
         url: '/signup',
-        templateUrl: 'app/signup/signup.html'
+        templateUrl: 'app/assets/signup/signup.html',
+        controller: 'signupController as vm'
       })
       .state('login',
       {
         url: '/login',
-        templateUrl: 'app/login/login.html'
+        templateUrl: 'app/assets/login/login.html'
       })
       .state('home',
       {
           url: '/home',
-          templateUrl: 'app/home/home.html'
+          templateUrl: 'app/assets/home/home.html'
       });
 
     $urlRouterProvider.otherwise('/intro');

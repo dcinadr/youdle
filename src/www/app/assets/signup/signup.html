@@ -1,0 +1,45 @@
+<ion-view title="Youdle Signup">
+	<ion-content>
+		<div class="row">
+			<div class="col">
+				<span>Please enter your information:</span>
+			</div>
+		</div>
+		<form class="simple-form" name="registerForm" novalidate>
+			<div class="row">
+	    	<div class="col">
+					<div class="list list-inset">
+	          <label class="item item-input">
+	            <input type="text" placeholder="First name" ng-model="vm.first" required>
+	          </label>
+	          <label class="item item-input">
+	            <input type="text" placeholder="Last name" ng-model="vm.last">
+	          </label>
+						<label class="item item-input">
+	            <input type="email" placeholder="Email" ng-model="vm.email" required>
+	          </label>
+						<label class="item item-input">
+	            <input type="text" placeholder="Username" ng-model="vm.username">
+	          </label>
+						<label class="item item-input">
+	            <input type="password" placeholder="Password" ng-model="vm.password" required>
+	          </label>
+						<label class="item item-input">
+	            <input type="password" placeholder="Confirm password" ng-model="vm.passwordConfirm" required>
+	          </label>
+	        </div>
+	    	</div>
+	    </div>
+		</form>
+		<div class="row">
+			<div class="col text-center">
+				<button type="button" class="button button-positive signup-button-submit" ng-click="vm.submitClick()" name="button">Submit</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<button type="button" class="button button-assertive signup-button-cancel" ui-sref="intro" name="button">Cancel</button>
+			</div>
+		</div>
+  </ion-content>
+</ion-view>

@@ -6,8 +6,8 @@
     <title></title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="app/intro/intro.css" rel="stylesheet">
-    <link href="app/signup/signup.css" rel="stylesheet">
+    <link href="app/assets/intro/intro.css" rel="stylesheet">
+    <link href="app/assets/signup/signup.css" rel="stylesheet">
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -17,13 +17,19 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-    <!-- your app's js -->
+
+    <!-- youdle js -->
+    <script src="app/shared/api/api.module.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/service/youdleApi.js"></script>
-    <script src="app/home/home.controller.js"></script>
+    <script src="app/assets/signup/signup.factory.js"></script>
+    <script src="app/shared/api/api.userRegistration.factory.js"></script>
+    <script src="app/assets/signup/signup.controller.js"></script>
+
+    <!-- <script src="app/service/youdleApi.js"></script>
+    <script src="app/assets/home/home.controller.js"></script> -->
 </head>
 <body ng-app="youdlePrototype">
-  <ion-nav-bar></ion-nav-bar>
+  <ion-nav-bar class="bar bar-positive"></ion-nav-bar>
   <ion-nav-view animation="slide-left-right">
     <!-- Center content -->
   </ion-nav-view>
