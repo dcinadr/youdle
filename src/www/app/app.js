@@ -66,7 +66,8 @@ angular.module('youdlePrototype', ['ionic', 'youdlePrototype.api'])
       .state('home',
       {
           url: '/home',
-          templateUrl: 'app/assets/home/home.html'
+          templateUrl: 'app/assets/home/home.html',
+          controller: 'homeController as vm'  
       });
 
     $urlRouterProvider.otherwise('/intro');
