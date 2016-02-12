@@ -6,9 +6,9 @@
     .module('youdlePrototype')
     .controller('signupController', signupController);
 
-  signupController.$inject = ['signupFactory', '$state'];
+  signupController.$inject = ['signupFactory', '$state', '$ionicHistory'];
 
-  function signupController(signupFactory, $state)
+  function signupController(signupFactory, $state, $ionicHistory)
   {
     var vm = this;
 
@@ -39,12 +39,16 @@
         })
         .then(function(response)
         {
-          console.log('success');
+          // TODO: need to actually have the user login in to the app before navigating
+          $ionicHistory.nextViewOptions({
+            historyRoot: true  // if successfully navigating to home page we want to make that the root page
+          });
           $state.go('home');
         },
         function(errors)
         {
-          console.error('error', errors);
+          // TODO: handle specific errors (identified in backendless documentation)
+          console.error('registration error', errors);
         });
     }
 

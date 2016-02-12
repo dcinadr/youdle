@@ -1,15 +1,10 @@
-<ion-view>
-  <ion-content class="center">
-    <div class="row">
-      <div class="col text-center">
-        <h2>Youdle</h2>
-      </div>
-    </div>
+<ion-view title="Youdle">
+  <form class="css-form login-form">
     <div class="row">
       <div class="col">
         <div class="list list-inset">
           <label class="item item-input">
-            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Email or Username">
           </label>
           <label class="item item-input">
             <input type="password" placeholder="Password">
@@ -19,26 +14,23 @@
     </div>
     <div class="row">
       <div class="col">
-        <button type="button" class="button button-block button-calm">Login</button>
+        <button type="button" class="button button-block login-button-login">Login</button>
       </div>
     </div>
     <div class="row">
       <div class="col text-center">
-        <div class="row">
-          <div class="col col-center text-right">
-            <span>Or, login with </span>
-          </div>
-          <div class="col text-left">
-            <button type="button" class="button icon ion-social-googleplus button-assertive"></button>
-            <button type="button" class="button icon ion-social-facebook button-positive"></button>
-          </div>
-        </div>
+        <span>-- OR --</span>
       </div>
     </div>
-    <div class="row" style="margin-top:30px">
-      <div class="col text-center">
-        <h3><a href="#">Sign up</a></h3>
+    <div class="row login-row-google">
+      <div class="col">
+        <button type="button" class="button button-block login-button-google icon-right ion-social-googleplus">Google+</button>
       </div>
     </div>
-  </ion-content>
+    <div class="row login-row-facebook">
+      <div class="col">
+        <button type="button" class="button button-block login-button-facebook icon-right ion-social-facebook">facebook</button>
+      </div>
+    </div>
+  </form>
 </ion-view>

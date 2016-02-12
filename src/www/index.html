@@ -8,6 +8,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="app/assets/intro/intro.css" rel="stylesheet">
     <link href="app/assets/signup/signup.css" rel="stylesheet">
+    <link href="app/assets/login/login.css" rel="stylesheet">
     <link href="app/app.css" rel="stylesheet">
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -25,12 +26,17 @@
     <script src="app/assets/signup/signup.factory.js"></script>
     <script src="app/shared/api/api.userRegistration.factory.js"></script>
     <script src="app/assets/signup/signup.controller.js"></script>
+    <script src="app/assets/login/login.controller.js"></script>
 
     <script src="app/service/youdleApi.js"></script>
     <script src="app/assets/home/home.controller.js"></script>
 </head>
 <body ng-app="youdlePrototype">
-  <ion-nav-bar class="bar index-header-bar"></ion-nav-bar>
+  <ion-nav-bar class="bar index-header-bar" align-title="center">
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-chevron-left"></i>
+    </ion-nav-back-button>
+  </ion-nav-bar>
   <ion-nav-view animation="slide-left-right">
     <!-- Center content -->
   </ion-nav-view>

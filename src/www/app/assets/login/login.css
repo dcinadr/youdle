@@ -1,0 +1,34 @@
+.login-form
+{
+  margin-top: 100px;
+}
+
+.login-button-login
+{
+  background-color: #0277bd;
+  color: whitesmoke;
+}
+
+.login-row-google > .col
+{
+  padding: 0 5px;
+}
+
+.login-row-facebook > .col
+{
+  padding: 0 5px;
+}
+
+.login-button-google
+{
+  background-color: #dd4d40;
+  color: whitesmoke;
+  margin: 0 !important;
+}
+
+.login-button-facebook
+{
+  background-color: #46629e;
+  color: whitesmoke;
+  margin: 0 !important;
+}
