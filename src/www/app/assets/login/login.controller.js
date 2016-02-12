@@ -6,15 +6,37 @@
     .module('youdlePrototype')
     .controller('loginController', loginController);
 
-  loginController.$inject = [];
+  loginController.$inject = ['loginFactory', '$state', '$ionicHistory'];
 
-  function loginController()
+  function loginController(loginFactory, $state, $ionicHistory)
   {
     var vm = this;
 
     vm.activate = function()
     {
 
+    }
+
+    vm.submitLogin = function()
+    {
+      if (!vm.email || !vm.password)
+      {
+        console.log('email and password must be entered');
+        return;
+      }
+
+      loginFactory.login({
+        login: vm.email,
+        password: vm.password
+      })
+      .then(function(response)
+      {
+        $state.go('home');
+      },
+      function(errors)
+      {
+
+      });
     }
 
     vm.activate();
