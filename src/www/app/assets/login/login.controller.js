@@ -35,7 +35,7 @@
       },
       function(errors)
       {
-
+        console.error('error logging in.', errors);
       });
     }
 
