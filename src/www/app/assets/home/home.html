@@ -1,17 +1,36 @@
 
 <ion-view title="Youdle">
     <ion-content>
-      <div class="card" ng-repeat="card in vm.cards">
+      <div class="card home-div-card" ng-repeat="card in vm.cards">
         <div class="item item-text-wrap">
-          <div class="row">
-            {{card.question}}
-          </div>
-          <div class="row">
-            <div class="col" ng-repeat="answer in card.answers">
-              <button class="button button-block button-calm">
-                {{answer}}
-              </button>
+          <div class="row home-div-cardHeaderRow">
+            <div class="home-div-cardInfo">
+              <div class="home-div-userImage">
+                <i class="icon ion-person"></i>
+              </div>
+              <div class="home-div-userInfo">
+                <div class="home-div-userName">
+                  {{card.user.name}}
+                </div>
+                <div class="home-div-cardDate">
+                  {{card.created | date:'MM-dd-yyyy'}}
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="row home-div-cardContent">
+            <div class="col">
+              <div class="row">
+                {{card.question}}
+              </div>
+              <div class="row">
+                <div class="col" ng-repeat="answer in card.answers">
+                  <button class="button button-block button-calm">
+                    {{answer.text}}
+                  </button>
+                </div>
+              </div>
+            </div>      
           </div>
         </div>
       </div>

@@ -31,6 +31,9 @@
       })
       .then(function(response)
       {
+        $ionicHistory.nextViewOptions({
+          historyRoot: true  // if successfully navigating to home page we want to make that the root page
+        });
         $state.go('home');
       },
       function(errors)

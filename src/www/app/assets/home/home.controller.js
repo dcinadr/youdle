@@ -5,9 +5,9 @@
         .module('youdlePrototype' )
         .controller('homeController', homeController);
 
-    homeController.$inject = ['youdleApi'];
+    homeController.$inject = ['homeFactory'];
 
-    function homeController(youdleApi) {
+    function homeController(homeFactory) {
 
         var vm = this;
         vm.title = 'Home';
@@ -16,7 +16,16 @@
 
         function activate()
         {
-          vm.cards = youdleApi.getYoudleCards();
+          homeFactory.getCards()
+            .then(function(data)
+            {
+              vm.cards = data;
+            },
+            function(errors)
+            {
+              console.error('problem loading cards', errors);
+            }
+          );
         }
     }
 })();

@@ -1,0 +1,74 @@
+.signup-div-instructions
+{
+  margin-top: 50px;
+}
+
+.signup-button-submit
+{
+  width: 40%;
+  border: 0;
+  background-color: #E1F5FE;
+  text-align: right;
+  color: #0277BD;
+  height: 100%;
+}
+
+.signup-button-cancel
+{
+  width: 95%;
+}
+
+.css-form
+{
+  margin-top: -10px;
+}
+
+.css-form
+.list
+{
+  margin: 0px;
+}
+
+.css-form
+label
+{
+  margin-bottom: 2px;
+}
+
+.css-form
+input.ng-invalid.ng-touched
+{
+  /*background-color: pink;*/
+}
+
+.signup-div-submit
+{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #E1F5FE;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.signup-div-submit > div
+{
+  text-align: right;
+  height: 100%;
+  padding-right: 10px;
+}
+
+.signup-div-submit
+.ion-chevron-right
+{
+  color: #0277BD;
+  padding-left: 5px;
+}
+
+.signup-error-text
+{
+  color: red;
+  font-weight: bold;
+  padding-left: 10px;
+}
