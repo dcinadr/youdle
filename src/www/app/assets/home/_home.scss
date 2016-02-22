@@ -1,7 +1,21 @@
 .home-div-card
 .item
 {
-  padding: 10px;
+  padding: 0px;
+}
+
+.home-div-card
+{
+  margin: 5px;
+}
+
+.home-button-option
+{
+  height: 30px;
+  font-size: small;
+  min-height: 0px;
+  line-height: 0px;
+  color: whitesmoke !important;
 }
 
 .home-div-cardHeaderRow
@@ -14,10 +28,14 @@
   width: 100%;
 }
 
-.home-div-cardInfo
-i
+.home-div-cardInfo i
 {
   font-size: xx-large;
+}
+
+.home-div-userName
+{
+  font-size: smaller;
 }
 
 .home-div-userImage
@@ -34,11 +52,18 @@ i
 .home-div-cardDate
 {
   margin-top: -6px;
-  font-size: x-small;
+  font-size: xx-small;
   color: darkgray;
 }
 
 .home-div-cardContent
 {
   margin-top: 0px;
+  padding: 0px;
+}
+
+.home-row-cardQuestion
+{
+  padding: 0px;
+  font-size: smaller;
 }

@@ -20,17 +20,25 @@
           </div>
           <div class="row home-div-cardContent">
             <div class="col">
-              <div class="row">
+              <div class="row home-row-cardQuestion">
                 {{card.question}}
               </div>
-              <div class="row">
-                <div class="col" ng-repeat="answer in card.answers">
-                  <button class="button button-block button-calm">
-                    {{answer.text}}
+              <div class="row" ng-hide="card.showResults">
+                <div class="col" ng-repeat="option in card.options">
+                  <button class="button button-block button-stable home-button-option" ng-click="vm.selectOption(card, option)">
+                    {{option.text}}
                   </button>
                 </div>
               </div>
-            </div>      
+              <div class="row" ng-show="card.showResults">
+                <div class="col">
+                  <div class="row" ng-repeat="option in card.options">
+                    <div class="col">{{option.text}}</div>
+                    <div class="col">{{option.votePercentage}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

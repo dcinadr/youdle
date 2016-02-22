@@ -6,9 +6,9 @@
     .module('youdlePrototype')
     .controller('loginController', loginController);
 
-  loginController.$inject = ['loginFactory', '$state', '$ionicHistory'];
+  loginController.$inject = ['loginFactory', '$state', '$ionicHistory', 'localStorageFactory'];
 
-  function loginController(loginFactory, $state, $ionicHistory)
+  function loginController(loginFactory, $state, $ionicHistory, localStorageFactory)
   {
     var vm = this;
 
@@ -34,6 +34,8 @@
         $ionicHistory.nextViewOptions({
           historyRoot: true  // if successfully navigating to home page we want to make that the root page
         });
+        localStorageFactory.set('userObjectId', response.data.objectId);
+        localStorageFactory.set('userToken', response.data['user-token']);
         $state.go('home');
       },
       function(errors)

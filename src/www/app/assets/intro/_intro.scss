@@ -1,24 +1,33 @@
+$intro-background: #E9F6FF;
+
 .intro-content
 {
-  background-color: $calm;
+  background-color: $intro-background;
   height: 100%;
 }
 
 .intro-col-message
 {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .intro-message
 {
-  color: whitesmoke;
+  color: $calm;
   font-style: italic;
   font-size: 12pt;
+  font-weight: bold;
 }
 
 .intro-logo
 {
   margin-top: 30px;
+}
+
+.intro-logo
+img
+{
+  width: 175px;
 }
 
 .intro-button-login,
@@ -30,8 +39,8 @@
   padding-left: 100px;
   padding-right: 100px;
   font-weight: bold;
-  color: #3399FF;
-  margin-top: 30px;
+  // color: whitesmoke;
+  // background-color: $calm;
 }
 
 .intro-div-signup
@@ -53,6 +62,6 @@
   padding-left: 100px;
   padding-right: 100px;
   font-weight: bold;
-  color: white !important;
-  background-color: #3399FF !important;
+  color: $calm;
+  background-color: $intro-background;
 }
