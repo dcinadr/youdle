@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "Youdle-P",
   "app_id": "a11fb126",
   "gulpStartupTasks": [
     "sass",

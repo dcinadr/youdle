@@ -11,12 +11,13 @@
   function cardApiFactory($http, $q)
   {
     var service = {
+      getAll: getAll,
       get: get
     };
 
     return service;
 
-    function get(data, userToken)
+    function getAll()
     {
       return $http(
         {
@@ -25,10 +26,22 @@
           headers: {
             'application-id': 'E11DA057-CE8C-0C31-FF22-59965520EB00',
             'secret-key': '6E12B29C-A78E-4C99-FFFA-698C1EE7D200',
-            'application-type': 'REST',
-            'user-token': userToken
-          },
-          data: data
+            'application-type': 'REST'
+          }
+        });
+    }
+
+    function get(objectId)
+    {
+      return $http(
+        {
+          method: 'GET',
+          url: 'https://api.backendless.com/v1/data/card/' + objectId + '?loadRelations=options,user',
+          headers: {
+            'application-id': 'E11DA057-CE8C-0C31-FF22-59965520EB00',
+            'secret-key': '6E12B29C-A78E-4C99-FFFA-698C1EE7D200',
+            'application-type': 'REST'
+          }
         });
     }
   }

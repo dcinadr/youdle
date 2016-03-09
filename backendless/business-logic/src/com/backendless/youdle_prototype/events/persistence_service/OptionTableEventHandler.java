@@ -15,11 +15,17 @@ import com.backendless.youdle_prototype.models.Option;
 @Asset( "option" )
 public class OptionTableEventHandler extends com.backendless.servercode.extension.PersistenceExtender<Option>
 {
-    
+
+  @Override
+  public void beforeUpdate( RunnerContext context, Option option ) throws Exception
+  {
+
+  }
+
   @Override
   public void afterUpdate( RunnerContext context, Option option, ExecutionResult<Option> result ) throws Exception
   {
-    
+    // add your code here
   }
     
 }

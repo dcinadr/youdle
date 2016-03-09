@@ -2,16 +2,22 @@ package com.backendless.youdle_prototype.models;
 
 import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
-import com.backendless.geo.GeoPoint;
 
 public class Option
 {
+  private String percentageDisplayed;
   private String text;
   private java.util.Date created;
   private String ownerId;
   private java.util.List<BackendlessUser> users;
   private String objectId;
+  private Double percentage;
   private java.util.Date updated;
+
+  public String getPercentageDisplayed()
+  {
+    return this.percentageDisplayed;
+  }
 
   public String getText()
   {
@@ -38,11 +44,21 @@ public class Option
     return this.objectId;
   }
 
+  public Double getPercentage()
+  {
+    return this.percentage;
+  }
+
   public java.util.Date getUpdated()
   {
     return this.updated;
   }
 
+
+  public void setPercentageDisplayed( String percentageDisplayed )
+  {
+    this.percentageDisplayed = percentageDisplayed;
+  }
 
   public void setText( String text )
   {
@@ -67,6 +83,11 @@ public class Option
   public void setObjectId( String objectId )
   {
     this.objectId = objectId;
+  }
+
+  public void setPercentage( Double percentage )
+  {
+    this.percentage = percentage;
   }
 
   public void setUpdated( java.util.Date updated )
