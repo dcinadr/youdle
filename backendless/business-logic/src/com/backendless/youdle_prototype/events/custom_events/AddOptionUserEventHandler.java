@@ -18,48 +18,33 @@ import java.util.*;
 @BackendlessEvent( "AddOptionUser" )
 public class AddOptionUserEventHandler extends com.backendless.servercode.extension.CustomEventHandler
 {
-    // only reason this is global is because it needs to be accessible from lambda expression
-    private boolean userAlreadyExists = false;
     @Override
     public Map handleEvent( RunnerContext context, Map eventArgs )
     {
-        this.userAlreadyExists = false;
-        String optionObjectId = eventArgs.get("optionObjectId").toString();
-        String cardObjectId = eventArgs.get("cardObjectId").toString();
-        String userObjectId = eventArgs.get("userObjectId").toString();
+        String optionObjectId = eventArgs.get("optionObjectId").toString();  // option that we are adding the user
+        String cardObjectId = eventArgs.get("cardObjectId").toString(); // card that the option is included
+        String userObjectId = eventArgs.get("userObjectId").toString(); // user that we are adding to the option
 
-        Map card = getCard(cardObjectId);
+        Map card = getCardMap(cardObjectId);
         Option option = getOption(optionObjectId);
-        List<BackendlessUser> optionUsers = option.getUsers();
 
-        checkIfUserAlreadyExist(userObjectId, optionUsers);
-        if (this.userAlreadyExists)
+        try
         {
-            // todo: log message "User has already been added to this option.  User: <user>, Option: <option>"
-            //return card;
-        }
+            RemoveUserFromAllOptions(userObjectId, card);
 
-        ArrayList<Map> cardOptions = (ArrayList<Map>) card.get("options");
-        cardOptions.forEach(cardOption -> {
-            ArrayList<Map> cardOptionUsers = (ArrayList<Map>) cardOption.get("users");
-            cardOptionUsers.forEach(cardOptionUser -> {
-               if (Objects.equals(cardOptionUser.get("objectId"), userObjectId))
-               {
-                   Option optionToRemoveUser = getOption(cardOption.get("objectId").toString());
-                   List<BackendlessUser> optionToRemoveUserUsers = optionToRemoveUser.getUsers();
-                   Optional<BackendlessUser> userToRemoveFromOption = optionToRemoveUserUsers
-                           .stream()
-                           .filter(o -> o.getObjectId() == userObjectId)
-                           .findAny();
-                   if (userToRemoveFromOption.isPresent())
-                   {
-                       optionToRemoveUserUsers.remove(userToRemoveFromOption.get());
-                       optionToRemoveUser.setUsers(optionToRemoveUserUsers);
-                       optionToRemoveUser.save();
-                   }
-               }
-            });
-        });
+            // add user
+            BackendlessUser user = Backendless.Data.of(BackendlessUser.class).findById(userObjectId);
+            option.getUsers().add(user);
+            option.save();
+
+            // todo - calc percentage
+            // todo - update card / options
+            // todo - return card
+        }
+        catch (Exception e)
+        {
+            Exception x = e;
+        }
 
         // sudo
         // if user is already in list than exit eventhandler - x
@@ -71,24 +56,72 @@ public class AddOptionUserEventHandler extends com.backendless.servercode.extens
         return card;
     }
 
-    private Option getOption(String optionObjectId) {
+    private void RemoveUserFromAllOptions(String userObjectId, Map card)
+    {
+        Option[] options = getAllOptionsFromCard(card);
+        for (Option option : options) {
+            // get all users for this option of this card
+            ArrayList<BackendlessUser> users = getOptionUsers(option);
+            for (BackendlessUser user : users)
+            {
+                // if user found in list of users
+                if (Objects.equals(user.getObjectId(), userObjectId))
+                {
+                    Option updatedOption = removeUserFromOption(userObjectId, option);
+                    // todo - log something here
+                    break;
+                }
+            }
+        }
+    }
+
+    // will return the same Option if user was not removed, otherwise the updated user is returned
+    private Option removeUserFromOption(String userObjectId, Option cardOption)
+    {
+        Option updatedOption = cardOption;
+        Option optionToUpdate = getOption(cardOption.getObjectId());
+        BackendlessUser userToRemove = getUserFromOptionUsers(userObjectId, optionToUpdate);
+        if (userToRemove != null)
+        {
+            optionToUpdate.getUsers().remove(userToRemove);
+            updatedOption = optionToUpdate.save();
+        }
+        return updatedOption;
+    }
+
+    private BackendlessUser getUserFromOptionUsers(String userObjectId, Option option)
+    {
+        BackendlessUser userToRemove = null;
+        for (BackendlessUser backendlessUser : option.getUsers())
+        {
+            if (Objects.equals(backendlessUser.getObjectId(), userObjectId))
+            {
+                userToRemove = backendlessUser;
+                break;
+            }
+        }
+        return userToRemove;
+    }
+
+    private ArrayList<BackendlessUser> getOptionUsers(Option option)
+    {
+        return (ArrayList<BackendlessUser>) option.getUsers();
+    }
+
+    private Option[] getAllOptionsFromCard(Map card)
+    {
+        return (Option[]) card.get("options");
+    }
+
+    private Option getOption(String optionObjectId)
+    {
         return Backendless.Data.of(Option.class).findById(optionObjectId);
     }
 
-    private Map getCard(String cardObjectId) {
+    private Map getCardMap(String cardObjectId)
+    {
         List<String> cardRelations = new ArrayList<>();
         cardRelations.add("options");
         return Backendless.Data.of("card").findById(cardObjectId, cardRelations);
     }
-
-    private void checkIfUserAlreadyExist(String userObjectId, List<BackendlessUser> users) {
-        users.forEach(user -> {
-            if (Objects.equals(user.getObjectId(), userObjectId))
-            {
-                this.userAlreadyExists = true;
-                return;
-            }
-        });
-    }
-
 }

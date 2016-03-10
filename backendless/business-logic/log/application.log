@@ -1,28 +1,28 @@
-2016-03-09 01:53:27,538 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-09 01:53:27,560 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-09 01:53:27,561 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-09 01:53:27,569 [INFO] CodeRunner session is running for 2 hour and will be terminated on 03:53:27.567[UTC]
-2016-03-09 01:53:28,228 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-09 01:53:29,516 [INFO] Runner successfully registered
-2016-03-09 01:53:29,519 [INFO] Parsing event model...
-2016-03-09 01:53:29,633 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-09 01:53:29,636 [INFO] Deploying model to server, and starting debug...
-2016-03-09 01:53:30,249 [INFO] Model successfully deployed...
-2016-03-09 01:53:30,250 [INFO] Waiting for events...
-2016-03-09 02:40:50,826 [INFO] Debugging Utility disconnected successfully
-2016-03-09 02:40:50,828 [INFO] Thank you for using Backendless
-2016-03-09 02:40:58,274 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-09 02:40:58,277 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-09 02:40:58,278 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-09 02:40:58,286 [INFO] CodeRunner session is running for 2 hour and will be terminated on 04:40:58.284[UTC]
-2016-03-09 02:40:58,960 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-09 02:41:00,120 [INFO] Runner successfully registered
-2016-03-09 02:41:00,123 [INFO] Parsing event model...
-2016-03-09 02:41:00,225 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-09 02:41:00,226 [INFO] Deploying model to server, and starting debug...
-2016-03-09 02:41:00,843 [INFO] Model successfully deployed...
-2016-03-09 02:41:00,845 [INFO] Waiting for events...
-2016-03-09 02:42:02,103 [ERROR] Unexpected end of stream.
+2016-03-10 03:59:18,105 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 03:59:18,129 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 03:59:18,130 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 03:59:18,138 [INFO] CodeRunner session is running for 2 hour and will be terminated on 05:59:18.136[UTC]
+2016-03-10 03:59:19,071 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 03:59:20,379 [INFO] Runner successfully registered
+2016-03-10 03:59:20,383 [INFO] Parsing event model...
+2016-03-10 03:59:20,527 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 03:59:20,530 [INFO] Deploying model to server, and starting debug...
+2016-03-10 03:59:21,244 [INFO] Model successfully deployed...
+2016-03-10 03:59:21,246 [INFO] Waiting for events...
+2016-03-10 04:02:53,813 [ERROR] Could not connect to redis
+redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Jedis.expire(Jedis.java:247) ~[CodeRunner.jar:na]
+	at com.backendless.redis.RegisterRedisConnector$1.execute(RegisterRedisConnector.java:64) ~[CodeRunner.jar:na]
+	at com.backendless.redis.JedisManager.execute(JedisManager.java:224) ~[CodeRunner.jar:na]
+	at com.backendless.redis.RegisterRedisConnector.run(RegisterRedisConnector.java:58) [CodeRunner.jar:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_74]
+2016-03-10 04:03:42,900 [ERROR] Unexpected end of stream.
 redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
 	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
 	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
@@ -32,20 +32,19 @@ redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of strea
 	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
 	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
 	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-2016-03-09 02:42:42,331 [INFO] Debugging Utility disconnected successfully
-2016-03-09 02:42:42,332 [INFO] Thank you for using Backendless
-2016-03-09 02:43:00,230 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-09 02:43:00,234 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-09 02:43:00,235 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-09 02:43:00,244 [INFO] CodeRunner session is running for 2 hour and will be terminated on 04:43:00.242[UTC]
-2016-03-09 02:43:00,914 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-09 02:43:02,091 [INFO] Runner successfully registered
-2016-03-09 02:43:02,093 [INFO] Parsing event model...
-2016-03-09 02:43:02,223 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-09 02:43:02,224 [INFO] Deploying model to server, and starting debug...
-2016-03-09 02:43:02,792 [INFO] Model successfully deployed...
-2016-03-09 02:43:02,793 [INFO] Waiting for events...
-2016-03-09 02:44:20,262 [ERROR] Unexpected end of stream.
+2016-03-10 04:04:00,334 [ERROR] Unfortunately, Debugging Utility disconnected unsuccessfully
+2016-03-10 04:04:10,089 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:04:10,092 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:04:10,092 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:04:10,102 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:04:10.099[UTC]
+2016-03-10 04:04:10,747 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:04:11,941 [INFO] Runner successfully registered
+2016-03-10 04:04:11,943 [INFO] Parsing event model...
+2016-03-10 04:04:12,074 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:04:12,075 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:04:12,650 [INFO] Model successfully deployed...
+2016-03-10 04:04:12,652 [INFO] Waiting for events...
+2016-03-10 04:05:30,932 [ERROR] Unexpected end of stream.
 redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
 	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
 	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
@@ -55,19 +54,20 @@ redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of strea
 	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
 	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
 	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-2016-03-09 02:45:03,310 [ERROR] Unfortunately, Debugging Utility disconnected unsuccessfully
-2016-03-09 02:45:14,902 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-09 02:45:14,904 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-09 02:45:14,906 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-09 02:45:14,915 [INFO] CodeRunner session is running for 2 hour and will be terminated on 04:45:14.913[UTC]
-2016-03-09 02:45:15,550 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-09 02:45:16,678 [INFO] Runner successfully registered
-2016-03-09 02:45:16,682 [INFO] Parsing event model...
-2016-03-09 02:45:16,799 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-09 02:45:16,800 [INFO] Deploying model to server, and starting debug...
-2016-03-09 02:45:17,337 [INFO] Model successfully deployed...
-2016-03-09 02:45:17,338 [INFO] Waiting for events...
-2016-03-09 02:46:45,028 [ERROR] Unexpected end of stream.
+2016-03-10 04:09:00,384 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:09:00,385 [INFO] Thank you for using Backendless
+2016-03-10 04:09:03,586 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:09:03,590 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:09:03,590 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:09:03,597 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:09:03.596[UTC]
+2016-03-10 04:09:04,269 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:09:05,461 [INFO] Runner successfully registered
+2016-03-10 04:09:05,463 [INFO] Parsing event model...
+2016-03-10 04:09:05,570 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:09:05,572 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:09:06,221 [INFO] Model successfully deployed...
+2016-03-10 04:09:06,222 [INFO] Waiting for events...
+2016-03-10 04:10:59,745 [ERROR] Unexpected end of stream.
 redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
 	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
 	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
@@ -77,15 +77,210 @@ redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of strea
 	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
 	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
 	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-2016-03-09 02:47:24,121 [ERROR] Unfortunately, Debugging Utility disconnected unsuccessfully
-2016-03-09 02:47:34,904 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-09 02:47:34,907 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-09 02:47:34,908 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-09 02:47:34,917 [INFO] CodeRunner session is running for 2 hour and will be terminated on 04:47:34.914[UTC]
-2016-03-09 02:47:35,558 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-09 02:47:36,700 [INFO] Runner successfully registered
-2016-03-09 02:47:36,705 [INFO] Parsing event model...
-2016-03-09 02:47:36,834 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-09 02:47:36,836 [INFO] Deploying model to server, and starting debug...
-2016-03-09 02:47:37,450 [INFO] Model successfully deployed...
-2016-03-09 02:47:37,452 [INFO] Waiting for events...
+2016-03-10 04:11:50,367 [ERROR] Unfortunately, Debugging Utility disconnected unsuccessfully
+2016-03-10 04:11:56,644 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:11:56,648 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:11:56,650 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:11:56,658 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:11:56.655[UTC]
+2016-03-10 04:11:57,309 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:11:58,457 [INFO] Runner successfully registered
+2016-03-10 04:11:58,459 [INFO] Parsing event model...
+2016-03-10 04:11:58,577 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:11:58,578 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:11:59,169 [INFO] Model successfully deployed...
+2016-03-10 04:11:59,171 [INFO] Waiting for events...
+2016-03-10 04:12:59,656 [ERROR] Unexpected end of stream.
+redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
+	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
+2016-03-10 04:22:27,984 [ERROR] Unfortunately, Debugging Utility disconnected unsuccessfully
+2016-03-10 04:22:41,656 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:22:41,659 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:22:41,660 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:22:41,669 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:22:41.667[UTC]
+2016-03-10 04:22:42,346 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:22:43,576 [INFO] Runner successfully registered
+2016-03-10 04:22:43,578 [INFO] Parsing event model...
+2016-03-10 04:22:43,710 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:22:43,712 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:22:44,388 [INFO] Model successfully deployed...
+2016-03-10 04:22:44,390 [INFO] Waiting for events...
+2016-03-10 04:24:25,425 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:24:25,426 [INFO] Thank you for using Backendless
+2016-03-10 04:24:33,479 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:24:33,483 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:24:33,483 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:24:33,492 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:24:33.490[UTC]
+2016-03-10 04:24:34,171 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:24:35,400 [INFO] Runner successfully registered
+2016-03-10 04:24:35,404 [INFO] Parsing event model...
+2016-03-10 04:24:35,524 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:24:35,525 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:24:36,073 [INFO] Model successfully deployed...
+2016-03-10 04:24:36,074 [INFO] Waiting for events...
+2016-03-10 04:25:20,653 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:25:20,655 [INFO] Thank you for using Backendless
+2016-03-10 04:25:44,098 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:25:44,101 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:25:44,102 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:25:44,111 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:25:44.109[UTC]
+2016-03-10 04:25:44,870 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:25:46,104 [INFO] Runner successfully registered
+2016-03-10 04:25:46,106 [INFO] Parsing event model...
+2016-03-10 04:25:46,207 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:25:46,209 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:25:46,757 [INFO] Model successfully deployed...
+2016-03-10 04:25:46,759 [INFO] Waiting for events...
+2016-03-10 04:26:55,905 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:26:55,907 [INFO] Thank you for using Backendless
+2016-03-10 04:27:04,082 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:27:04,085 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:27:04,086 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:27:04,095 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:27:04.093[UTC]
+2016-03-10 04:27:04,757 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:27:05,915 [INFO] Runner successfully registered
+2016-03-10 04:27:05,920 [INFO] Parsing event model...
+2016-03-10 04:27:06,073 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:27:06,075 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:27:06,626 [INFO] Model successfully deployed...
+2016-03-10 04:27:06,627 [INFO] Waiting for events...
+2016-03-10 04:29:19,636 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:29:19,638 [INFO] Thank you for using Backendless
+2016-03-10 04:29:26,945 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:29:26,948 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:29:26,948 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:29:26,957 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:29:26.955[UTC]
+2016-03-10 04:29:27,641 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:29:28,764 [INFO] Runner successfully registered
+2016-03-10 04:29:28,766 [INFO] Parsing event model...
+2016-03-10 04:29:28,866 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:29:28,867 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:29:29,662 [INFO] Model successfully deployed...
+2016-03-10 04:29:29,663 [INFO] Waiting for events...
+2016-03-10 04:37:02,852 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:37:02,854 [INFO] Thank you for using Backendless
+2016-03-10 04:37:14,370 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:37:14,373 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:37:14,374 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:37:14,383 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:37:14.381[UTC]
+2016-03-10 04:37:15,065 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:37:16,201 [INFO] Runner successfully registered
+2016-03-10 04:37:16,206 [INFO] Parsing event model...
+2016-03-10 04:37:16,324 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:37:16,326 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:37:16,944 [INFO] Model successfully deployed...
+2016-03-10 04:37:16,945 [INFO] Waiting for events...
+2016-03-10 04:40:33,593 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:40:33,596 [INFO] Thank you for using Backendless
+2016-03-10 04:40:43,951 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:40:43,954 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:40:43,955 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:40:43,964 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:40:43.962[UTC]
+2016-03-10 04:40:44,646 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:40:45,816 [INFO] Runner successfully registered
+2016-03-10 04:40:45,821 [INFO] Parsing event model...
+2016-03-10 04:40:45,948 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:40:45,949 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:40:46,504 [INFO] Model successfully deployed...
+2016-03-10 04:40:46,505 [INFO] Waiting for events...
+2016-03-10 04:43:00,913 [ERROR] Unexpected end of stream.
+redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
+	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
+2016-03-10 04:43:54,706 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:43:54,707 [INFO] Thank you for using Backendless
+2016-03-10 04:44:01,852 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:44:01,855 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:44:01,856 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:44:01,865 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:44:01.863[UTC]
+2016-03-10 04:44:02,563 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:44:03,736 [INFO] Runner successfully registered
+2016-03-10 04:44:03,740 [INFO] Parsing event model...
+2016-03-10 04:44:03,878 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:44:03,879 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:44:04,485 [INFO] Model successfully deployed...
+2016-03-10 04:44:04,486 [INFO] Waiting for events...
+2016-03-10 04:45:12,214 [ERROR] Unexpected end of stream.
+redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
+	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
+2016-03-10 04:53:00,672 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:53:00,674 [INFO] Thank you for using Backendless
+2016-03-10 04:53:07,970 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:53:07,973 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:53:07,974 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:53:07,983 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:53:07.981[UTC]
+2016-03-10 04:53:08,681 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:53:09,896 [INFO] Runner successfully registered
+2016-03-10 04:53:09,900 [INFO] Parsing event model...
+2016-03-10 04:53:10,053 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:53:10,055 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:53:10,705 [INFO] Model successfully deployed...
+2016-03-10 04:53:10,705 [INFO] Waiting for events...
+2016-03-10 04:54:44,426 [ERROR] Unexpected end of stream.
+redis.clients.jedis.exceptions.JedisConnectionException: Unexpected end of stream.
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:198) ~[CodeRunner.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[CodeRunner.jar:na]
+	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
+	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
+2016-03-10 04:55:19,352 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:55:19,353 [INFO] Thank you for using Backendless
+2016-03-10 04:55:25,558 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 04:55:25,562 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 04:55:25,563 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 04:55:25,571 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:55:25.569[UTC]
+2016-03-10 04:55:26,273 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 04:55:27,515 [INFO] Runner successfully registered
+2016-03-10 04:55:27,517 [INFO] Parsing event model...
+2016-03-10 04:55:27,631 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 04:55:27,632 [INFO] Deploying model to server, and starting debug...
+2016-03-10 04:55:28,218 [INFO] Model successfully deployed...
+2016-03-10 04:55:28,218 [INFO] Waiting for events...
+2016-03-10 04:56:27,915 [INFO] Debugging Utility disconnected successfully
+2016-03-10 04:56:27,917 [INFO] Thank you for using Backendless
+2016-03-10 05:09:03,173 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 05:09:03,176 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 05:09:03,177 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 05:09:03,186 [INFO] CodeRunner session is running for 2 hour and will be terminated on 07:09:03.184[UTC]
+2016-03-10 05:09:03,847 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 05:09:05,115 [INFO] Runner successfully registered
+2016-03-10 05:09:05,117 [INFO] Parsing event model...
+2016-03-10 05:09:05,238 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 05:09:05,240 [INFO] Deploying model to server, and starting debug...
+2016-03-10 05:09:05,841 [INFO] Model successfully deployed...
+2016-03-10 05:09:05,842 [INFO] Waiting for events...
+2016-03-10 05:28:57,221 [INFO] Debugging Utility disconnected successfully
+2016-03-10 05:28:57,222 [INFO] Thank you for using Backendless
+2016-03-10 05:30:03,694 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-10 05:30:03,697 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-10 05:30:03,698 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-10 05:30:03,705 [INFO] CodeRunner session is running for 2 hour and will be terminated on 07:30:03.703[UTC]
+2016-03-10 05:30:04,361 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-10 05:30:05,560 [INFO] Runner successfully registered
+2016-03-10 05:30:05,562 [INFO] Parsing event model...
+2016-03-10 05:30:05,669 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-10 05:30:05,671 [INFO] Deploying model to server, and starting debug...
+2016-03-10 05:30:06,390 [INFO] Model successfully deployed...
+2016-03-10 05:30:06,391 [INFO] Waiting for events...
