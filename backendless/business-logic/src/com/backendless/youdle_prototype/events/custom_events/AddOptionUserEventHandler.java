@@ -32,14 +32,12 @@ public class AddOptionUserEventHandler extends com.backendless.servercode.extens
         {
             RemoveUserFromAllOptions(userObjectId, card);
 
-            // add user
-            BackendlessUser user = Backendless.Data.of(BackendlessUser.class).findById(userObjectId);
-            option.getUsers().add(user);
-            option.save();
+            addUserToOption(userObjectId, option);
 
-            // todo - calc percentage
-            // todo - update card / options
-            // todo - return card
+            calculatePercentages(card);
+
+            // update card with changes made
+            card = getCardMap(cardObjectId);
         }
         catch (Exception e)
         {
@@ -54,6 +52,30 @@ public class AddOptionUserEventHandler extends com.backendless.servercode.extens
         // return entire card
 
         return card;
+    }
+
+    private void calculatePercentages(Map card) {
+        Option[] options = getAllOptionsFromCard(card);
+        int totalVotes = 0;
+        for (Option cardOption : options) {
+            totalVotes += cardOption.getUsers().size();
+        }
+        for (Option cardOption : options) {
+            Option optionToUpdate = getOption(cardOption.getObjectId());
+            int userCount = optionToUpdate.getUsers().size();
+            double percentage = userCount / totalVotes;
+            percentage = percentage * 100;
+            optionToUpdate.setPercentage(percentage);
+            optionToUpdate.setPercentageDisplayed(percentage + "%");
+            optionToUpdate.save();
+        }
+    }
+
+    private void addUserToOption(String userObjectId, Option option)
+    {
+        BackendlessUser user = Backendless.Data.of(BackendlessUser.class).findById(userObjectId);
+        option.getUsers().add(user);
+        option.save();
     }
 
     private void RemoveUserFromAllOptions(String userObjectId, Map card)
