@@ -1,197 +1,34 @@
-2016-03-11 04:56:48,305 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 04:56:48,329 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 04:56:48,330 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 04:56:48,337 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:56:48.335[UTC]
-2016-03-11 04:56:49,108 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 04:56:50,280 [INFO] Runner successfully registered
-2016-03-11 04:56:50,282 [INFO] Parsing event model...
-2016-03-11 04:56:50,385 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 04:56:50,386 [INFO] Deploying model to server, and starting debug...
-2016-03-11 04:56:51,067 [INFO] Model successfully deployed...
-2016-03-11 04:56:51,067 [INFO] Waiting for events...
-2016-03-11 04:56:51,068 [WARN] Command '' not exist!
-2016-03-11 04:56:51,069 [INFO] Please use one of the following commands: build, status, deploy, publish, help, exit.
-2016-03-11 04:56:54,502 [INFO] Debugging Utility disconnected successfully
-2016-03-11 04:56:54,502 [INFO] Thank you for using Backendless
-2016-03-11 04:56:59,577 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 04:56:59,580 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 04:56:59,580 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 04:56:59,586 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:56:59.584[UTC]
-2016-03-11 04:57:00,199 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 04:57:01,668 [INFO] Runner successfully registered
-2016-03-11 04:57:01,670 [INFO] Parsing event model...
-2016-03-11 04:57:01,760 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 04:57:01,761 [INFO] Deploying model to server, and starting debug...
-2016-03-11 04:57:02,600 [INFO] Model successfully deployed...
-2016-03-11 04:57:02,601 [INFO] Waiting for events...
-2016-03-11 04:57:10,198 [INFO] Debugging Utility disconnected successfully
-2016-03-11 04:57:10,198 [INFO] Thank you for using Backendless
-2016-03-11 04:57:21,395 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 04:57:21,397 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 04:57:21,397 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 04:57:21,403 [INFO] CodeRunner session is running for 2 hour and will be terminated on 06:57:21.402[UTC]
-2016-03-11 04:57:22,138 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 04:57:23,248 [INFO] Runner successfully registered
-2016-03-11 04:57:23,250 [INFO] Parsing event model...
-2016-03-11 04:57:23,344 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 04:57:23,345 [INFO] Deploying model to server, and starting debug...
-2016-03-11 04:57:23,913 [INFO] Model successfully deployed...
-2016-03-11 04:57:23,913 [INFO] Waiting for events...
-2016-03-11 05:03:56,647 [ERROR] java.net.SocketException: Software caused connection abort: socket write error
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Software caused connection abort: socket write error
-	at redis.clients.jedis.Connection.flush(Connection.java:282) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:211) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
-	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-Caused by: java.net.SocketException: Software caused connection abort: socket write error
-	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.socketWrite(Unknown Source) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.write(Unknown Source) ~[na:1.8.0_74]
-	at redis.clients.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:31) ~[CodeRunner.jar:na]
-	at redis.clients.util.RedisOutputStream.flush(RedisOutputStream.java:213) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.flush(Connection.java:279) ~[CodeRunner.jar:na]
-	... 3 common frames omitted
-2016-03-11 05:21:04,464 [ERROR] java.net.SocketException: Software caused connection abort: socket write error
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Software caused connection abort: socket write error
-	at redis.clients.jedis.Connection.flush(Connection.java:282) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:211) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
-	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-Caused by: java.net.SocketException: Software caused connection abort: socket write error
-	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.socketWrite(Unknown Source) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.write(Unknown Source) ~[na:1.8.0_74]
-	at redis.clients.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:31) ~[CodeRunner.jar:na]
-	at redis.clients.util.RedisOutputStream.flush(RedisOutputStream.java:213) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.flush(Connection.java:279) ~[CodeRunner.jar:na]
-	... 3 common frames omitted
-2016-03-11 05:27:25,628 [ERROR] java.net.SocketException: Software caused connection abort: socket write error
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Software caused connection abort: socket write error
-	at redis.clients.jedis.Connection.flush(Connection.java:282) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:211) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
-	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-Caused by: java.net.SocketException: Software caused connection abort: socket write error
-	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.socketWrite(Unknown Source) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.write(Unknown Source) ~[na:1.8.0_74]
-	at redis.clients.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:31) ~[CodeRunner.jar:na]
-	at redis.clients.util.RedisOutputStream.flush(RedisOutputStream.java:213) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.flush(Connection.java:279) ~[CodeRunner.jar:na]
-	... 3 common frames omitted
-2016-03-11 05:29:03,592 [INFO] Debugging Utility disconnected successfully
-2016-03-11 05:29:03,594 [INFO] Thank you for using Backendless
-2016-03-11 05:32:09,463 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 05:32:09,466 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 05:32:09,466 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 05:32:09,473 [INFO] CodeRunner session is running for 2 hour and will be terminated on 07:32:09.471[UTC]
-2016-03-11 05:32:10,378 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 05:32:13,267 [INFO] Runner successfully registered
-2016-03-11 05:32:13,269 [INFO] Parsing event model...
-2016-03-11 05:32:13,449 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 05:32:13,449 [INFO] Deploying model to server, and starting debug...
-2016-03-11 05:32:14,307 [INFO] Model successfully deployed...
-2016-03-11 05:32:14,308 [INFO] Waiting for events...
-2016-03-11 05:32:14,308 [INFO] Deploying 3 event handlers and 0 timers to the server… 
-2016-03-11 05:32:16,391 [INFO] Successfully deployed all event handlers and timers. 
-2016-03-11 05:32:16,391 [INFO] If you connected to coderunner for debug - please stop debugging
-2016-03-11 05:32:16,392 [INFO] CodeRunner will shutdown now
-2016-03-11 05:32:16,735 [INFO] Debugging Utility disconnected successfully
-2016-03-11 05:32:16,735 [INFO] Thank you for using Backendless
-2016-03-11 06:12:20,511 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 06:12:20,514 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 06:12:20,514 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 06:12:20,520 [INFO] CodeRunner session is running for 2 hour and will be terminated on 08:12:20.518[UTC]
-2016-03-11 06:12:21,188 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 06:12:22,324 [INFO] Runner successfully registered
-2016-03-11 06:12:22,325 [INFO] Parsing event model...
-2016-03-11 06:12:22,508 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 06:12:22,508 [INFO] Deploying model to server, and starting debug...
-2016-03-11 06:12:23,082 [INFO] Model successfully deployed...
-2016-03-11 06:12:23,082 [INFO] Waiting for events...
-2016-03-11 06:14:03,721 [ERROR] java.net.SocketException: Software caused connection abort: socket write error
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Software caused connection abort: socket write error
-	at redis.clients.jedis.Connection.flush(Connection.java:282) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:211) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
-	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-Caused by: java.net.SocketException: Software caused connection abort: socket write error
-	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.socketWrite(Unknown Source) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.write(Unknown Source) ~[na:1.8.0_74]
-	at redis.clients.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:31) ~[CodeRunner.jar:na]
-	at redis.clients.util.RedisOutputStream.flush(RedisOutputStream.java:213) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.flush(Connection.java:279) ~[CodeRunner.jar:na]
-	... 3 common frames omitted
-2016-03-11 06:15:25,933 [ERROR] Unfortunately, Debugging Utility disconnected unsuccessfully
-2016-03-11 06:15:39,834 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 06:15:39,838 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 06:15:39,838 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 06:15:39,845 [INFO] CodeRunner session is running for 2 hour and will be terminated on 08:15:39.843[UTC]
-2016-03-11 06:15:40,441 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 06:15:41,484 [INFO] Runner successfully registered
-2016-03-11 06:15:41,486 [INFO] Parsing event model...
-2016-03-11 06:15:41,587 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 06:15:41,587 [INFO] Deploying model to server, and starting debug...
-2016-03-11 06:15:42,122 [INFO] Model successfully deployed...
-2016-03-11 06:15:42,123 [INFO] Waiting for events...
-2016-03-11 06:17:16,480 [ERROR] java.net.SocketException: Software caused connection abort: socket write error
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Software caused connection abort: socket write error
-	at redis.clients.jedis.Connection.flush(Connection.java:282) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:211) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
-	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-Caused by: java.net.SocketException: Software caused connection abort: socket write error
-	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.socketWrite(Unknown Source) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.write(Unknown Source) ~[na:1.8.0_74]
-	at redis.clients.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:31) ~[CodeRunner.jar:na]
-	at redis.clients.util.RedisOutputStream.flush(RedisOutputStream.java:213) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.flush(Connection.java:279) ~[CodeRunner.jar:na]
-	... 3 common frames omitted
-2016-03-11 06:18:22,303 [ERROR] java.net.SocketException: Connection reset by peer: socket write error
-redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Connection reset by peer: socket write error
-	at redis.clients.jedis.Connection.flush(Connection.java:282) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:211) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.BinaryJedis.rpush(BinaryJedis.java:954) ~[CodeRunner.jar:na]
-	at com.backendless.coderunner.processor.ResponderProcessor.run(ResponderProcessor.java:56) ~[CodeRunner.jar:na]
-Caused by: java.net.SocketException: Connection reset by peer: socket write error
-	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.socketWrite(Unknown Source) ~[na:1.8.0_74]
-	at java.net.SocketOutputStream.write(Unknown Source) ~[na:1.8.0_74]
-	at redis.clients.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:31) ~[CodeRunner.jar:na]
-	at redis.clients.util.RedisOutputStream.flush(RedisOutputStream.java:213) ~[CodeRunner.jar:na]
-	at redis.clients.jedis.Connection.flush(Connection.java:279) ~[CodeRunner.jar:na]
-	... 3 common frames omitted
-2016-03-11 06:18:34,384 [INFO] Debugging Utility disconnected successfully
-2016-03-11 06:18:34,384 [INFO] Thank you for using Backendless
-2016-03-11 06:18:40,093 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 06:18:40,096 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 06:18:40,096 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 06:18:40,102 [INFO] CodeRunner session is running for 2 hour and will be terminated on 08:18:40.100[UTC]
-2016-03-11 06:18:40,697 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 06:18:43,175 [INFO] Runner successfully registered
-2016-03-11 06:18:43,177 [INFO] Parsing event model...
-2016-03-11 06:18:43,293 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 06:18:43,293 [INFO] Deploying model to server, and starting debug...
-2016-03-11 06:18:43,897 [INFO] Model successfully deployed...
-2016-03-11 06:18:43,898 [INFO] Waiting for events...
-2016-03-11 06:20:16,075 [INFO] Debugging Utility disconnected successfully
-2016-03-11 06:20:16,075 [INFO] Thank you for using Backendless
-2016-03-11 06:20:47,895 [INFO] CodeRunner(tm) Backendless Debugging Utility
-2016-03-11 06:20:47,897 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
-2016-03-11 06:20:47,897 [INFO] Version: 3.0.0 Build date: 20160125-0901
-2016-03-11 06:20:47,904 [INFO] CodeRunner session is running for 2 hour and will be terminated on 08:20:47.903[UTC]
-2016-03-11 06:20:48,634 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
-2016-03-11 06:20:50,280 [INFO] Runner successfully registered
-2016-03-11 06:20:50,282 [INFO] Parsing event model...
-2016-03-11 06:20:50,376 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
-2016-03-11 06:20:50,376 [INFO] Deploying model to server, and starting debug...
-2016-03-11 06:20:51,124 [INFO] Model successfully deployed...
-2016-03-11 06:20:51,125 [INFO] Waiting for events...
-2016-03-11 06:20:51,125 [INFO] Deploying 3 event handlers and 0 timers to the server… 
-2016-03-11 06:20:52,709 [INFO] Successfully deployed all event handlers and timers. 
-2016-03-11 06:20:52,709 [INFO] If you connected to coderunner for debug - please stop debugging
-2016-03-11 06:20:52,709 [INFO] CodeRunner will shutdown now
-2016-03-11 06:20:53,078 [INFO] Debugging Utility disconnected successfully
-2016-03-11 06:20:53,079 [INFO] Thank you for using Backendless
+2016-03-12 01:56:20,969 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-12 01:56:21,004 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-12 01:56:21,004 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-12 01:56:21,019 [INFO] CodeRunner session is running for 2 hour and will be terminated on 03:56:21.014[UTC]
+2016-03-12 01:56:22,107 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-12 01:56:24,122 [INFO] Runner successfully registered
+2016-03-12 01:56:24,129 [INFO] Parsing event model...
+2016-03-12 01:56:24,462 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-12 01:56:24,464 [INFO] Deploying model to server, and starting debug...
+2016-03-12 01:56:25,402 [INFO] Model successfully deployed...
+2016-03-12 01:56:25,404 [INFO] Waiting for events...
+2016-03-12 01:56:25,407 [INFO] Deploying 3 event handlers and 0 timers to the server… 
+2016-03-12 01:56:27,062 [INFO] Successfully deployed all event handlers and timers. 
+2016-03-12 01:56:27,064 [INFO] If you connected to coderunner for debug - please stop debugging
+2016-03-12 01:56:27,064 [INFO] CodeRunner will shutdown now
+2016-03-12 01:56:27,422 [INFO] Debugging Utility disconnected successfully
+2016-03-12 01:56:27,424 [INFO] Thank you for using Backendless
+2016-03-12 01:56:49,478 [INFO] CodeRunner(tm) Backendless Debugging Utility
+2016-03-12 01:56:49,481 [INFO] Copyright(C) 2016 Backendless Corp. All rights reserved. 
+2016-03-12 01:56:49,481 [INFO] Version: 3.0.0 Build date: 20160125-0901
+2016-03-12 01:56:49,486 [INFO] CodeRunner session is running for 2 hour and will be terminated on 03:56:49.483[UTC]
+2016-03-12 01:56:50,246 [INFO] Registering runner on: https://api.backendless.com with secretKey: 229E6EBF-479A-3E67-FF2A-AC32CD928B00
+2016-03-12 01:56:51,456 [INFO] Runner successfully registered
+2016-03-12 01:56:51,463 [INFO] Parsing event model...
+2016-03-12 01:56:51,701 [INFO] Build successfully: EventModel{timers=0, eventHandlers=3}
+2016-03-12 01:56:51,701 [INFO] Deploying model to server, and starting debug...
+2016-03-12 01:56:52,291 [INFO] Model successfully deployed...
+2016-03-12 01:56:52,293 [INFO] Waiting for events...
+2016-03-12 01:56:52,296 [INFO] Deploying 3 event handlers and 0 timers to the server… 
+2016-03-12 01:56:54,508 [INFO] Successfully deployed all event handlers and timers. 
+2016-03-12 01:56:54,511 [INFO] If you connected to coderunner for debug - please stop debugging
+2016-03-12 01:56:54,513 [INFO] CodeRunner will shutdown now
+2016-03-12 01:56:54,863 [INFO] Debugging Utility disconnected successfully
+2016-03-12 01:56:54,863 [INFO] Thank you for using Backendless

@@ -144,6 +144,7 @@ public class AddOptionUserEventHandler extends com.backendless.servercode.extens
     {
         List<String> cardRelations = new ArrayList<>();
         cardRelations.add("options");
+        cardRelations.add("user");
         return Backendless.Data.of("card").findById(cardObjectId, cardRelations);
     }
 }
