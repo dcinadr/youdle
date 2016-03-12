@@ -66,15 +66,22 @@
         cardObjectId: cardObjectId,
         userObjectId: userObjectId
       };
-      // var data = {
-      //   __meta: "users:" + userObjectId,
-      //   users: [{objectId: userObjectId, ___class: 'Users'}]
-      // };
       return optionApiFactory.post(data, userToken)
-      //return optionApiFactory.put(data, optionObjectId, userToken)
         .then(function(response)
         {
-          return response;
+          var updatedCard = response.data;
+          return updatedCard;
+          // for (var i = 0; i < homeModel.cards.length; ii++) {
+          //   if (homeModel.cards[i].objectId == updatedCard.objectId)
+          //   {
+          //     homeModel.cards[i] = updatedCard;
+          //     break;
+          //   }
+          // }
+          // return true;
+
+          //var cardList = $filter('filter')(homeModel.cards, {objectId: updateCard.objectId}, true);
+          //return updateCard;
         },
         function(errors)
         {
