@@ -6,9 +6,9 @@
     .module('youdlePrototype')
     .factory('homeFactory', homeFactory);
 
-  homeFactory.$inject = ['$q', 'cardApiFactory', 'optionApiFactory', '$filter'];
+  homeFactory.$inject = ['$q', 'cardApiFactory', 'optionApiFactory', '$filter', 'localStorageFactory'];
 
-  function homeFactory($q, cardApiFactory, optionApiFactory, $filter)
+  function homeFactory($q, cardApiFactory, optionApiFactory, $filter, localStorageFactory)
   {
     var homeModel = {};
 
@@ -26,7 +26,7 @@
         .then(function(response)
         {
           homeModel.cards = response.data.data;
-          processAllCards();
+          showRelevantResults();
 
           return true;  // return true if nothing went wrong
         },
@@ -53,6 +53,29 @@
         {
           return $q.reject(errors);
         });
+    }
+
+    // show results if user has already answered
+    function showRelevantResults()
+    {
+      var userObjectId = localStorageFactory.get('userObjectId');
+      for (var cardIndex = 0; cardIndex < homeModel.cards.length; cardIndex++)
+      {
+        var card = homeModel.cards[cardIndex];
+        for (var optionIndex = 0; optionIndex < card.options.length; optionIndex++)
+        {
+          var option = card.options[optionIndex];
+          for (var userIndex = 0; userIndex < option.users.length; userIndex++)
+          {
+            var user = option.users[userIndex];
+            if (user.objectId == userObjectId)
+            {
+              card.showResults = true;
+              break;
+            }
+          }
+        }
+      };
     }
   }
 })();

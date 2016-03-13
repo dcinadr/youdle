@@ -34,7 +34,15 @@
                 <div class="col">
                   <div class="row" ng-repeat="option in card.options">
                     <div class="col">{{option.text}}</div>
+                    <div class="col home-div-progress">
+                      <progress value="{{option.percentage}}" max="100">{{option.percentageDisplayed}}</progress>
+                    </div>
                     <div class="col">{{option.percentageDisplayed}}</div>
+                  </div>
+                  <div class="row">
+                    <button type="button" class="home-button-changeVote" ng-click="card.showResults = false" ng-show="card.showResults">
+                      Change vote
+                    </button>
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import com.backendless.servercode.RunnerContext;
 import com.backendless.servercode.annotation.BackendlessEvent;
 import com.backendless.youdle_prototype.models.Option;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 /**
@@ -34,9 +35,12 @@ public class AddOptionUserEventHandler extends com.backendless.servercode.extens
 
             addUserToOption(userObjectId, option);
 
+            // refresh card after changes have been made
+            card = getCardMap(cardObjectId);
+
             calculatePercentages(card);
 
-            // update card with changes made
+            // update card with percentage changes made
             card = getCardMap(cardObjectId);
         }
         catch (Exception e)
@@ -63,10 +67,12 @@ public class AddOptionUserEventHandler extends com.backendless.servercode.extens
         for (Option cardOption : options) {
             Option optionToUpdate = getOption(cardOption.getObjectId());
             int userCount = optionToUpdate.getUsers().size();
-            double percentage = userCount / totalVotes;
+            double percentage = (double)userCount / totalVotes;
             percentage = percentage * 100;
             optionToUpdate.setPercentage(percentage);
-            optionToUpdate.setPercentageDisplayed(percentage + "%");
+            DecimalFormat percentageFormat = new DecimalFormat();
+            percentageFormat.setMaximumFractionDigits(2);
+            optionToUpdate.setPercentageDisplayed(percentageFormat.format(percentage) + "%");
             optionToUpdate.save();
         }
     }

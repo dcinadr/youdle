@@ -9781,6 +9781,25 @@ a.button {
   padding: 0px;
   font-size: smaller; }
 
+.home-button-changeVote {
+  background-color: white;
+  border: none;
+  color: #070565;
+  font-size: x-small; }
+
+.home-div-progress > progress {
+  margin: 0px;
+  margin-top: 6px;
+  background-color: white; }
+
+.home-div-progress > progress::-webkit-progress-value {
+  background-color: #070564;
+  height: 10px;
+  border-radius: 4px; }
+
+.home-div-progress > progress::-webkit-progress-bar {
+  background-color: transparent; }
+
 .intro-content {
   background-color: #E9F6FF;
   height: 100%; }
