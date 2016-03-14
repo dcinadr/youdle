@@ -6,9 +6,9 @@
     .module('youdlePrototype')
     .factory('homeFactory', homeFactory);
 
-  homeFactory.$inject = ['$q', 'cardApiFactory', 'optionApiFactory', '$filter', 'localStorageFactory'];
+  homeFactory.$inject = ['$q', 'cardApiFactory', 'addOptionUserApiFactory', '$filter', 'localStorageFactory'];
 
-  function homeFactory($q, cardApiFactory, optionApiFactory, $filter, localStorageFactory)
+  function homeFactory($q, cardApiFactory, addOptionUserApiFactory, $filter, localStorageFactory)
   {
     var homeModel = {};
 
@@ -43,7 +43,7 @@
         cardObjectId: cardObjectId,
         userObjectId: userObjectId
       };
-      return optionApiFactory.post(data, userToken)
+      return addOptionUserApiFactory.post(data, userToken)
         .then(function(response)
         {
           var updatedCard = response.data;

@@ -4,11 +4,11 @@
 
   angular
     .module('youdlePrototype.api')
-    .factory('optionApiFactory', optionApiFactory);
+    .factory('loggerApiFactory', loggerApiFactory);
 
-  optionApiFactory.$inject = ['$http'];
+  loggerApiFactory.$inject = [];
 
-  function optionApiFactory($http)
+  function loggerApiFactory()
   {
     var service = {
       
