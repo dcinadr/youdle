@@ -5,9 +5,9 @@
         .module('youdlePrototype' )
         .controller('homeController', homeController);
 
-    homeController.$inject = ['homeFactory', 'localStorageFactory'];
+    homeController.$inject = ['homeFactory', 'localStorageFactory', 'loggerFactory'];
 
-    function homeController(homeFactory, localStorageFactory) {
+    function homeController(homeFactory, localStorageFactory, loggerFactory) {
 
         var vm = this;
         vm.title = 'Home';
@@ -19,18 +19,12 @@
           homeFactory.getCards()
             .then(function(response)
             {
-              if (response)
-              {
-                // TODO - not sure that using the homeModel is really a good idea
-                vm.cards = homeFactory.homeModel.cards;
-              }
-              else
-              {
-                console.error('problem handling getCards response.')
-              }
+              // TODO - not sure that using the homeModel is really a good idea
+              vm.cards = homeFactory.homeModel.cards;
             },
             function(errors)
             {
+              // TODO - display something on page that something went wrong
               console.error('problem loading cards', errors);
             }
           );

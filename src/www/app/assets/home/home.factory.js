@@ -6,9 +6,9 @@
     .module('youdlePrototype')
     .factory('homeFactory', homeFactory);
 
-  homeFactory.$inject = ['$q', 'cardApiFactory', 'addOptionUserApiFactory', '$filter', 'localStorageFactory'];
+  homeFactory.$inject = ['$q', 'cardApiFactory', 'addOptionUserApiFactory', '$filter', 'localStorageFactory', 'loggerFactory'];
 
-  function homeFactory($q, cardApiFactory, addOptionUserApiFactory, $filter, localStorageFactory)
+  function homeFactory($q, cardApiFactory, addOptionUserApiFactory, $filter, localStorageFactory, loggerFactory)
   {
     var homeModel = {};
 
@@ -25,13 +25,22 @@
       return cardApiFactory.getAll()
         .then(function(response)
         {
-          homeModel.cards = response.data.data;
-          showRelevantResults();
+          try
+          {
+            homeModel.cards = response.data.data;
+            showRelevantResults();
+          }
+          catch (e)
+          {
+            loggerFactory.error('Global logger', e.message, e);
+            return $q.reject(e.message);
+          }
 
-          return true;  // return true if nothing went wrong
+          return;
         },
         function(errors)
         {
+          loggerFactory.error('Global logger', errors.data, errors);
           return $q.reject(errors);
         });
     }
@@ -51,6 +60,7 @@
         },
         function(errors)
         {
+          loggerFactory.error('Global logger', errors.data, errors);
           return $q.reject(errors);
         });
     }
