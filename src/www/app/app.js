@@ -64,11 +64,21 @@ angular.module('youdlePrototype', ['ionic', 'youdlePrototype.api', 'youdleProtot
         templateUrl: 'app/assets/login/login.html',
         controller: 'loginController as vm'
       })
-      .state('home',
+      .state('app',
+      {
+        abstract: true,
+        url: '/app',
+        templateUrl: 'app/assets/layout/layout.html'
+      })
+      .state('app.home',
       {
           url: '/home',
-          templateUrl: 'app/assets/home/home.html',
-          controller: 'homeController as vm'
+          views: {
+            'mainContent': {
+              templateUrl: 'app/assets/home/home.html',
+              controller: 'homeController as vm'
+            }
+          }
       });
 
     $urlRouterProvider.otherwise('/intro');

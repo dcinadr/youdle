@@ -36,7 +36,7 @@
         });
         localStorageFactory.set('userObjectId', response.data.objectId);
         localStorageFactory.set('userToken', response.data['user-token']);
-        $state.go('home');
+        $state.go('app.home');
       },
       function(errors)
       {

@@ -6,7 +6,7 @@
     .module('youdlePrototype.service')
     .factory('loggerFactory', loggerFactory);
 
-  Factory.$inject = ['loggerApiFactory'];
+  loggerFactory.$inject = ['loggerApiFactory'];
 
   function loggerFactory(loggerApiFactory)
   {

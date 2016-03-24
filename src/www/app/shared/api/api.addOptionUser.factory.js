@@ -6,7 +6,7 @@
     .module('youdlePrototype.api')
     .factory('addOptionUserApiFactory', addOptionUserApiFactory);
 
-  Factory.$inject = ['$http'];
+  addOptionUserApiFactory.$inject = ['$http'];
 
   function addOptionUserApiFactory($http)
   {
