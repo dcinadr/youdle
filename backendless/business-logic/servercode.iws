@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ae1259a-0c52-4b1d-b907-707621985880" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/servercode.iws" afterPath="$PROJECT_DIR$/servercode.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/www/app/assets/home/home.factory.js" afterPath="$PROJECT_DIR$/../../src/www/app/assets/home/home.factory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/www/app/shared/api/api.option.factory.js" afterPath="$PROJECT_DIR$/../../src/www/app/shared/api/api.option.factory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/www/app/assets/home/home.html" afterPath="$PROJECT_DIR$/../../src/www/app/assets/home/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/www/index.html" afterPath="$PROJECT_DIR$/../../src/www/index.html" />
     </list>
     <ignored path="servercode.iws" />
@@ -541,7 +539,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1036" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

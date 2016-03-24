@@ -32,7 +32,7 @@
           }
           catch (e)
           {
-            loggerFactory.error('Global logger', e.message, e);
+            loggerFactory.error('com.youdle.home', e.message, e);
             return $q.reject(e.message);
           }
 
@@ -40,7 +40,7 @@
         },
         function(errors)
         {
-          loggerFactory.error('Global logger', errors.data, errors);
+          loggerFactory.error('com.youdle.home', errors.data, errors);
           return $q.reject(errors);
         });
     }
@@ -56,11 +56,16 @@
         .then(function(response)
         {
           var updatedCard = response.data;
+          var logMessage = 'option selected on card.  optionObjectId: ' +
+                          optionObjectId + ' cardObjectId: ' + cardObjectId +
+                          ' userObjectId: ' + userObjectId;
+          loggerFactory.info('com.youdle.home', logMessage);
+                            
           return updatedCard;
         },
         function(errors)
         {
-          loggerFactory.error('Global logger', errors.data, errors);
+          loggerFactory.error('com.youdle.home', errors.data, errors);
           return $q.reject(errors);
         });
     }

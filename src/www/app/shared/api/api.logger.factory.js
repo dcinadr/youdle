@@ -23,7 +23,7 @@
     {
       return $http(
         {
-          method: 'GET',
+          method: 'PUT',
           url: 'https://api.backendless.com/v1/log',
           headers: {
             'application-id': 'E11DA057-CE8C-0C31-FF22-59965520EB00',
