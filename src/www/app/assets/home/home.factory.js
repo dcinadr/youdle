@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('youdlePrototype')
+    .module('youdle')
     .factory('homeFactory', homeFactory);
 
   homeFactory.$inject = ['$q', 'cardApiFactory', 'addOptionUserApiFactory', '$filter', 'localStorageFactory', 'loggerFactory'];
@@ -60,7 +60,7 @@
                           optionObjectId + ' cardObjectId: ' + cardObjectId +
                           ' userObjectId: ' + userObjectId;
           loggerFactory.info('com.youdle.home', logMessage);
-                            
+
           return updatedCard;
         },
         function(errors)

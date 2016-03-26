@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.src901663" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Youdle-P</name>
+  <name>Youdle</name>
   <description>
-        An Ionic Framework and Cordova project.
+        A social polling app.
     </description>
   <author email="dcinadr@gmail.com" href="http://example.com.com/">
       CapitaSync
@@ -15,7 +15,7 @@
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="5000"/>
+  <preference name="SplashScreenDelay" value="4000"/>
   <preference name="ShowSplashScreen" value="true"/>
   <preference name="AutoHideSplashScreen" value="true"/>
   <preference name="SplashShowOnlyFirstTime" value="false"/>

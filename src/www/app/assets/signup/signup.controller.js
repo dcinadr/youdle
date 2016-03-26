@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('youdlePrototype')
+    .module('youdle')
     .controller('signupController', signupController);
 
   signupController.$inject = ['signupFactory', '$state', '$ionicHistory'];

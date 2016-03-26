@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('youdlePrototype.api')
+    .module('youdle.api')
     .factory('loggerApiFactory', loggerApiFactory);
 
   loggerApiFactory.$inject = ['$http'];

@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('youdlePrototype.service')
+    .module('youdle.service')
     .factory('localStorageFactory', localStorageFactory);
 
     localStorageFactory.$inject = ['$window'];

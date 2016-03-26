@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('youdlePrototype' )
+        .module('youdle' )
         .controller('homeController', homeController);
 
     homeController.$inject = ['homeFactory', 'localStorageFactory', 'loggerFactory'];

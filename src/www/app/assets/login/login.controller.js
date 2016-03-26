@@ -3,14 +3,15 @@
   'use strict';
 
   angular
-    .module('youdlePrototype')
+    .module('youdle')
     .controller('loginController', loginController);
 
-  loginController.$inject = ['loginFactory', '$state', '$ionicHistory', 'localStorageFactory'];
+  loginController.$inject = ['loginFactory', '$state', '$ionicHistory', 'localStorageFactory', 'loggerFactory'];
 
-  function loginController(loginFactory, $state, $ionicHistory, localStorageFactory)
+  function loginController(loginFactory, $state, $ionicHistory, localStorageFactory, loggerFactory)
   {
     var vm = this;
+    vm.errorMessage = '';  // temp for debug
 
     vm.activate = function()
     {
@@ -36,10 +37,15 @@
         });
         localStorageFactory.set('userObjectId', response.data.objectId);
         localStorageFactory.set('userToken', response.data['user-token']);
+        loggerFactory.info('com.youdle.login', 'user logged in successfully.  userObjectId: ' + response.data.objectId);
         $state.go('app.home');
       },
       function(errors)
       {
+        // temporary for debug
+        vm.errorMessage = errors.data;
+
+        loggerFactory.error('com.youdle.login', errors.data, errors);
         console.error('error logging in.', errors);
       });
     }

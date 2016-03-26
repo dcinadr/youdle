@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('youdlePrototype')
+    .module('youdle')
     .factory('signupFactory', signupFactory);
 
   signupFactory.$inject = ['$q', 'userRegistrationApiFactory'];

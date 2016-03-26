@@ -2,7 +2,7 @@
 {
   'use strict';
 
-  angular.module('youdlePrototype.api', [
+  angular.module('youdle.api', [
     // angular modules
 
     // customer modules
