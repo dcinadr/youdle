@@ -1,15 +1,32 @@
 <ion-side-menus>
-  <!-- Center content -->
   <ion-side-menu-content>
-    <<ion-nav-bar></ion-nav-bar>
+    <ion-nav-bar class="bar-positive" align-title="center">
+      <ion-nav-buttons>
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
     <ion-nav-view name="mainContent" animation="slide-left-right">
       <!-- Center content -->
     </ion-nav-view>
   </ion-side-menu-content>
 
-  <!-- Left menu -->
   <ion-side-menu side="left">
-
+    <ion-header-bar align-title="left" class="bar-calm">
+      <h1 class="title">Settings</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <a class="button icon-left ion-android-options button-clear button-dark">Preferences</a>
+        </ion-item>
+        <ion-item>
+          <a class="button icon-left ion-android-person button-clear button-dark">Account</a>
+        </ion-item>
+        <ion-item>
+          <a class="button icon-left ion-log-out button-clear button-dark">Log out</a>
+        </ion-item>
+      </ion-list>
+    </ion-content>
   </ion-side-menu>
 
 </ion-side-menus>
