@@ -1,7 +1,10 @@
-<ion-view title="Youdle Signup">
+<ion-view title="Youdle Signup" class="signup-view">
+	<div class="row signup-title-div">
+		<h1 class="signup-title">Youdle!</h1>
+	</div>
 	<div class="row signup-div-instructions">
 		<div class="col">
-			<span>Please tell us about yourself</span>
+			<h4 class="signup-instructions">Sign up for free!</h4>
 		</div>
 	</div>
 	<form class="css-form" name="registerForm" novalidate>
@@ -48,9 +51,14 @@
 			</div>
 		</div>
 		<div class="row signup-div-submit">
+			<div class="col col-100 text-center">
+				<button type="button" class="button button-calm signup-button-submit" ng-click="vm.submitClick()" name="button">Submit</button>
+			</div>
+		</div>
+		<!-- <div class="row signup-div-submit">
 			<div class="col text-right">
 				<button type="submit" class="signup-button-submit" ng-click="vm.submitClick()" name="button">SUBMIT <i class="icon ion-chevron-right"></i></button>
 			</div>
-		</div>
+		</div> -->
 	</form>
 </ion-view>

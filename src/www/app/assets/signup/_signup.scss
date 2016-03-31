@@ -1,16 +1,28 @@
+.signup-view
+{
+  background: linear-gradient($balanced, white 70%);
+}
+
+.signup-title-div
+{
+  margin-top: 10px;
+}
+
+.signup-title
+{
+  color: whitesmoke;
+  font-style: italic;
+  font-family: 'Merienda', cursive;
+}
+
 .signup-div-instructions
 {
   margin-top: 50px;
 }
 
-.signup-button-submit
+.signup-instructions
 {
-  width: 40%;
-  border: 0;
-  background-color: #E1F5FE;
-  text-align: right;
-  color: #0277BD;
-  height: 100%;
+  color: whitesmoke;
 }
 
 .signup-button-cancel
@@ -27,12 +39,25 @@
 .list
 {
   margin: 0px;
+  background: transparent;
 }
 
 .css-form
 label
 {
-  margin-bottom: 2px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.css-form
+::-webkit-input-placeholder
+{
+  color: lightgray;
+}
+
+:-ms-input-placeholder
+{
+  color: lightgray;
 }
 
 .css-form
@@ -43,27 +68,12 @@ input.ng-invalid.ng-touched
 
 .signup-div-submit
 {
-  position: absolute;
-  bottom: 0px;
+
+}
+
+.signup-button-submit
+{
   width: 100%;
-  background-color: #E1F5FE;
-  height: 50px;
-  margin: 0px;
-  padding: 0px;
-}
-
-.signup-div-submit > div
-{
-  text-align: right;
-  height: 100%;
-  padding-right: 10px;
-}
-
-.signup-div-submit
-.ion-chevron-right
-{
-  color: #0277BD;
-  padding-left: 5px;
 }
 
 .signup-error-text
