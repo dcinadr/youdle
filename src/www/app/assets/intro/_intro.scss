@@ -1,33 +1,50 @@
-$intro-background: #E9F6FF;
+//$intro-background: #E9F6FF;  // for lighter theme
+$intro-background: $dark;  // for darker theme
+
+.intro-view
+{
+  //background: linear-gradient(145deg, #ABD0E8, $intro-background 40%);  // option for lighter theme
+  background: linear-gradient(145deg, #667494, $intro-background 30%);  // option for darker theme
+}
 
 .intro-content
 {
-  background-color: $intro-background;
+  // background-color: $intro-background;
   height: 100%;
 }
 
-.intro-col-message
+.intro-col-titleMessage
 {
   margin-top: 50px;
 }
 
+.intro-title
+{
+  color: whitesmoke;
+  font-style: italic;
+  font-size: 20pt;
+  font-weight: bold;
+  font-family: 'Merienda', Cursive;
+}
+
 .intro-message
 {
-  color: $calm;
+  color: whitesmoke;
   font-style: italic;
   font-size: 12pt;
   font-weight: bold;
+  font-family: 'Merienda', Cursive;
 }
 
 .intro-logo
 {
-  margin-top: 30px;
+  padding: 40px;
 }
 
 .intro-logo
 img
 {
-  width: 175px;
+  width: 100%;
 }
 
 .intro-button-login,
@@ -36,11 +53,9 @@ img
 .intro-button-login:hover,
 .intro-button-login:focus
 {
-  padding-left: 100px;
-  padding-right: 100px;
+  width: 100%;
   font-weight: bold;
-  // color: whitesmoke;
-  // background-color: $calm;
+  color: $intro-background !important;
 }
 
 .intro-div-signup
@@ -58,10 +73,11 @@ img
 .intro-button-signup,
 .intro-button-signup.active,
 .intro-button-signup.activated
+.intro-button-signup:hover,
+.intro-button-signup:focus
 {
-  padding-left: 100px;
-  padding-right: 100px;
+  width: 100%;
   font-weight: bold;
-  color: $calm;
-  background-color: $intro-background;
+  color: $intro-background !important;
+  background-color: $balanced !important;
 }

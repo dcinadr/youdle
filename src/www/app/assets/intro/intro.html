@@ -1,27 +1,36 @@
-<ion-view hide-nav-bar="true">
+<ion-view hide-nav-bar="true" class="intro-view">
 	<div class="intro-content">
     <div class="row">
-      <div class="col text-center intro-col-message">
-        <span class="intro-message">
-          Welcome to Youdle<br/>
-          share your opinion...<br/>
-          see the world's opinion...
-        </span>
+      <div class="col intro-col-titleMessage">
+				<div class="row">
+					<div class="col text-center">
+						<span class="intro-title">
+			          Welcome to Youdle
+						</span>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-80 col-offset-10 text-center intro-col-message">
+						<span class="intro-message">
+		          share your opinion and experience the world's reaction...
+		        </span>
+					</div>
+				</div>
       </div>
     </div>
     <div class="row">
-      <div class="col text-center intro-logo">
-        <img src="img/youdle-logo-01.png" />
+      <div class="col-50 col-offset-25 col-center text-center intro-logo">
+        <img src="img/world-bubble-full.png" />
       </div>
     </div>
     <div class="row">
-      <div class="col text-center">
-        <button type="button" class="button button-calm intro-button-login" ui-sref="login" name="button">Login</button>
+      <div class="col-80 col-offset-10 text-center">
+        <button type="button" class="button button-light intro-button-login" ui-sref="login" name="button">Login</button>
       </div>
     </div>
   </div>
   <div class="intro-div-signup">
-    <div class="col text-center">
+    <div class="col-80 col-offset-10 text-center">
       <button type="button" class="button intro-button-signup" ui-sref="signup" name="button">Sign Up</button>
     </div>
   </div>

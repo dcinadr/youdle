@@ -19,9 +19,10 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 $calm: #0071BC !default;
-$balanced: #009245 !default;
+$balanced: #0071BC !default;
 $stable: gray !default;
+$dark: #021F54 !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-@import "www/app/app"; 
+@import "www/app/app";
