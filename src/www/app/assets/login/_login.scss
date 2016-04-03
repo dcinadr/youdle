@@ -1,6 +1,23 @@
+.login-view
+{
+  background: linear-gradient($balanced, white 30%);
+}
+
+.login-header-image
+{
+  margin-top: 20px;
+}
+
+.login-header-image
+img
+{
+  width: 100%;
+  max-width: 556px;  // this is the actual width of the image - after this it would get distorted
+}
+
 .login-form
 {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .login-div-buttonLogin
@@ -37,4 +54,21 @@
   background-color: #46629e;
   color: whitesmoke;
   margin: 0 !important;
+}
+
+.login-form
+::-webkit-input-placeholder
+{
+  color: lightgray;
+}
+
+:-ms-input-placeholder
+{
+  color: lightgray;
+}
+
+.item-input
+{
+  margin-bottom: 10px;
+  border-radius: 4px;
 }

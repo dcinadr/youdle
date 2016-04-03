@@ -1,41 +1,48 @@
-<ion-view title="Youdle">
-  <form class="login-form">
+<ion-view title="Youdle" class="login-view">
+  <ion-content>
     <div class="row">
-      <div class="col">
-        <div class="list list-inset">
-          <label class="item item-input">
-            <input type="text" placeholder="Email or Username" ng-model="vm.email">
-          </label>
-          <label class="item item-input">
-            <input type="password" placeholder="Password" ng-model="vm.password">
-          </label>
+      <div class="col-60 col-offset-20 col-center login-header-image">
+        <img src="img/youdle-world.png" />
+      </div>
+    </div>
+    <form class="login-form">
+      <div class="row">
+        <div class="col">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="text" placeholder="Email" ng-model="vm.email">
+            </label>
+            <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="vm.password">
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col login-div-buttonLogin">
-        <button type="button" class="button button-block login-button-login" ng-click="vm.submitLogin()">Login</button>
+      <div class="row">
+        <div class="col login-div-buttonLogin">
+          <button type="button" class="button button-calm button-block login-button-login" ng-click="vm.submitLogin()">Login</button>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        {{vm.errorMessage}}        
+      <div class="row">
+        <div class="col">
+          {{vm.errorMessage}}
+        </div>
       </div>
-    </div>
-    <!-- <div class="row">
-      <div class="col text-center">
-        <span>-- OR --</span>
+      <!-- <div class="row">
+        <div class="col text-center">
+          <span>-- OR --</span>
+        </div>
       </div>
-    </div>
-    <div class="row login-row-google">
-      <div class="col">
-        <button type="button" class="button button-block login-button-google icon-right ion-social-googleplus">Google+</button>
+      <div class="row login-row-google">
+        <div class="col">
+          <button type="button" class="button button-block login-button-google icon-right ion-social-googleplus">Google+</button>
+        </div>
       </div>
-    </div>
-    <div class="row login-row-facebook">
-      <div class="col">
-        <button type="button" class="button button-block login-button-facebook icon-right ion-social-facebook">facebook</button>
-      </div>
-    </div> -->
-  </form>
+      <div class="row login-row-facebook">
+        <div class="col">
+          <button type="button" class="button button-block login-button-facebook icon-right ion-social-facebook">facebook</button>
+        </div>
+      </div> -->
+    </form>
+  </ion-content>
 </ion-view>
