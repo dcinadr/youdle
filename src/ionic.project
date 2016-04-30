@@ -1,6 +1,6 @@
 {
-  "name": "Youdle-P",
-  "app_id": "a11fb126",
+  "name": "Youdle",
+  "app_id": "278c89da",
   "gulpStartupTasks": [
     "sass",
     "watch"
