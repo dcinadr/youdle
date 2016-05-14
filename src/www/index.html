@@ -12,11 +12,13 @@
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merienda%3A400%2C700" rel="stylesheet" type="text/css">
+    <link href="lib/hawcons/filled/style.css" rel="stylesheet">
     <!-- backendless -->
     <script src="lib/backendless/backendless.js"></script>
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <script src="lib/dateformat/lib/dateformat.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
 <!-- <script src="cordova.js"></script> -->
@@ -25,7 +27,11 @@
     <script src="app/shared/service/service.module.js"></script>
     <script src="app/shared/service/localStorage.factory.js"></script>
     <script src="app/shared/api/api.module.js"></script>
+    <script src="lib/oclazyload/dist/ocLazyLoad.js" charset="utf-8"></script>
     <script src="app/app.js"></script>
+    <script src="app/config.run.js"></script>
+    <script src="app/config.router.js"></script>
+    <script src="app/config.js"></script>
     <script src="app/assets/signup/signup.factory.js"></script>
     <script src="app/assets/login/login.factory.js"></script>
     <script src="app/shared/api/api.userRegistration.factory.js"></script>
@@ -37,8 +43,6 @@
     <script src="app/shared/service/logger.factory.js"></script>
     <script src="app/assets/signup/signup.controller.js"></script>
     <script src="app/assets/login/login.controller.js"></script>
-    <script src="app/assets/home/home.factory.js"></script>
-    <script src="app/assets/home/home.controller.js"></script>
 
 </head>
 <body ng-app="youdle">

@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "Youdle",
   "version": "1.1.1",
   "description": "Youdle: A Social Polling App",
   "dependencies": {
@@ -20,7 +20,8 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "ionic-plugin-deploy"
   ],
   "cordovaPlatforms": [
     "android"

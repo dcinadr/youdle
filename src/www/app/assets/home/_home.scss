@@ -2,11 +2,36 @@
 .item
 {
   padding: 0px;
+  border: 0px;
+  background-color: transparent;
 }
 
 .home-div-card
 {
   margin: 5px;
+}
+
+.home-div-category
+{
+  color: $dim;
+}
+
+.home-div-supplementalIcons
+{
+  padding: 0px;
+  color: $energized;
+}
+
+.home-div-supplementalIcons
+div.col
+{
+  padding: 0px;
+}
+
+.home-div-supplementalIcons
+i
+{
+  float: right;
 }
 
 .home-button-option
@@ -21,6 +46,12 @@
 .home-div-cardHeaderRow
 {
   margin-bottom: 5px;
+}
+
+.home-div-cardHeaderRow
+i
+{
+  font-size: 20px;
 }
 
 .home-div-cardInfo
@@ -62,10 +93,38 @@
   padding: 0px;
 }
 
+.home-div-cardContent > .col,
+.home-div-cardContent > .col > .row
+{
+  padding-top: 0px;
+}
+
 .home-row-cardQuestion
 {
+  // padding: 0px;
+}
+
+.options
+{
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.options .button
+{
+  margin: 0px;
+}
+
+.home-div-results
+.col
+{
   padding: 0px;
-  font-size: smaller;
+}
+
+.home-div-results
+.percentage
+{
+  margin-left: 10px;
 }
 
 .home-button-changeVote
@@ -73,7 +132,8 @@
   background-color: white;
   border: none;
   color: #070565;
-  font-size: x-small;
+  font-size: smaller;
+  margin-top: 5px;
 }
 
 .home-div-progress > progress
@@ -85,7 +145,7 @@
 
 .home-div-progress > progress::-webkit-progress-value
 {
-  background-color: #070564;
+  background-color: $dim;
   height: 10px;
   border-radius: 4px;
 }
@@ -93,4 +153,17 @@
 .home-div-progress > progress::-webkit-progress-bar
 {
   background-color: transparent;
+}
+
+.progress-top > progress::-webkit-progress-value
+{
+  background-color: $energized;
+}
+
+.home
+.closing-date > div
+{
+  float: right;
+  font-size: x-small;
+  margin-bottom: -5px;
 }

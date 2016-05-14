@@ -1,68 +1,71 @@
-<!-- <ion-header-bar class="bar bar-calm bar-header" >
-  <h1 class="title">Youdle</h1>
-  <ion-nav-back-button class="button-clear">
-    <i class="ion-chevron-left"></i>
-  </ion-nav-back-button>
-</ion-header-bar> -->
-
-
-
-<!-- <ion-tabs class="tabs-energized tabs-icon-top">
-  <ion-tab title="Leagues" icon="ion-home" href="#">
-    <ion-view></ion-view>
-  </ion-tab>
-</ion-tabs> -->
-
-<ion-view title="Youdle">
-    <ion-content>
-      <div class="card home-div-card" ng-repeat="card in vm.cards">
-        <div class="item item-text-wrap">
-          <div class="row home-div-cardHeaderRow">
-            <div class="home-div-cardInfo">
-              <div class="home-div-userImage">
-                <i class="icon ion-person"></i>
+<ion-view title="Youdle" class="home">
+  <ion-content>
+    <div class="card home-div-card" ng-repeat="card in vm.cards">
+      <div class="item item-text-wrap">
+        <div class="row home-div-cardHeaderRow">
+            <div class="col">
+              <div class="home-div-category">
+                <i class="icon {{card.categoryIcon}}"></i>
               </div>
-              <div class="home-div-userInfo">
-                <div class="home-div-userName">
-                  {{card.user.name}}
+            </div>
+            <div class="col">
+              <div class="row home-div-supplementalIcons">
+                <div class="col">
+                  <i class="icon ion-android-star-outline"></i>
                 </div>
-                <div class="home-div-cardDate">
-                  {{card.created | date:'MM-dd-yyyy'}}
+                <div class="col">
+                  <i class="icon ion-ios-information-outline"></i>
+                </div>
+                <div class="col">
+                  <i class="icon ion-more"></i>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row home-div-cardContent">
-            <div class="col">
-              <div class="row home-row-cardQuestion">
-                {{card.question}}
+        </div>
+        <div class="row home-div-cardContent">
+          <div class="col">
+            <div class="row home-row-cardQuestion">
+              {{card.question}}
+            </div>
+            <div class="row options" ng-hide="card.showResults">
+              <div class="col col-50" ng-repeat="option in card.options">
+                <button class="button button-block button-calm home-button-option" ng-click="vm.selectOption(card, option)">
+                  {{option.text}}
+                </button>
               </div>
-              <div class="row" ng-hide="card.showResults">
-                <div class="col" ng-repeat="option in card.options">
-                  <button class="button button-block button-stable home-button-option" ng-click="vm.selectOption(card, option)">
-                    {{option.text}}
-                  </button>
-                </div>
-              </div>
-              <div class="row" ng-show="card.showResults">
-                <div class="col">
-                  <div class="row" ng-repeat="option in card.options">
-                    <div class="col">{{option.text}}</div>
-                    <div class="col home-div-progress">
-                      <progress value="{{option.percentage}}" max="100">{{option.percentageDisplayed}}</progress>
-                    </div>
-                    <div class="col">{{option.percentageDisplayed}}</div>
+            </div>
+            <div class="row home-div-results" ng-show="card.showResults">
+              <div class="col">
+                <div class="row" ng-repeat="option in card.options">
+                  <div class="col">{{option.text}}</div>
+                  <div class="col home-div-progress" ng-class="{'progress-top': option.top}">
+                    <progress value="{{option.percentage}}" max="100">{{option.percentageDisplayed}}</progress>
                   </div>
-                  <div class="row">
-                    <button type="button" class="home-button-changeVote" ng-click="card.showResults = false" ng-show="card.showResults">
-                      Change vote
-                    </button>
+                  <div class="col-20 percentage">
+                      <span>{{option.percentageDisplayed}}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <span type="button" class="home-button-changeVote" ng-click="card.showResults = false" ng-show="card.showResults">
+              Change vote
+            </span>
+          </div>
+          <div class="col closing-date">
+            <div>
+              <span>Closing: {{card.closeDateDisplay}}</span>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="closing-date">
+
+        </div> -->
       </div>
-    </ion-content>
+    </div>
+  </ion-content>
 </ion-view>
