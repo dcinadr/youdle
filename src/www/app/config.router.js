@@ -1,26 +1,5 @@
 'use strict';
 angular.module('youdle')
-  .run(function($ionicPlatform) {
-    var APPLICATION_ID = 'E11DA057-CE8C-0C31-FF22-59965520EB00',
-      SECRET_KEY = '119B6906-EF1E-A3D9-FFD9-3CFA191F0B00',
-      VERSION = 'v1'; //default application version;
-
-    $ionicPlatform.ready(function() {
-      if (window.cordova && window.cordova.plugins.Keyboard) {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-
-        // Don't remove this line unless you know what you are doing. It stops the viewport
-        // from snapping when text inputs are focused. Ionic handles this internally for
-        // a much nicer keyboard experience.
-        cordova.plugins.Keyboard.disableScroll(true);
-      }
-      if (window.StatusBar) {
-        StatusBar.styleDefault();
-      }
-    });
-  })
   .config(
     [
       '$stateProvider', '$urlRouterProvider',
@@ -30,7 +9,22 @@ angular.module('youdle')
         $stateProvider
           .state('intro', {
             url: '/intro',
-            templateUrl: 'app/assets/intro/intro.html'
+            templateUrl: 'app/assets/intro/intro.html',
+            controller: 'introController as vm',
+            resolve: {
+              loadDependencies: [
+                '$ocLazyLoad',
+                function($ocLazyLoad) {
+                  return $ocLazyLoad.load({
+                    files: [
+                      'app/shared/service/localStorage.factory.js',
+                      'app/assets/intro/intro.factory.js',
+                      'app/assets/intro/intro.controller.js'
+                    ]
+                  })
+                }
+              ]
+            }
           })
           .state('signup', {
             url: '/signup',
@@ -45,7 +39,22 @@ angular.module('youdle')
           .state('app', {
             abstract: true,
             url: '/app',
-            templateUrl: 'app/assets/layout/layout.html'
+            templateUrl: 'app/assets/layout/layout.html',
+            controller: 'layoutController as vm',
+            resolve: {
+              loadDependencies: [
+                '$ocLazyLoad',
+                function($ocLazyLoad) {
+                  return $ocLazyLoad.load({
+                    files: [
+                      'app/shared/api/api.userLogout.factory.js',
+                      'app/assets/layout/layout.factory.js',
+                      'app/assets/layout/layout.controller.js'
+                    ]
+                  })
+                }
+              ]
+            }
           })
           .state('app.home', {
             url: '/home',
