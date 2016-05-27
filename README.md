@@ -1,2 +1,2 @@
-# youdle-ionic-prototype
-Youdle Prototype using Ionic Framework
+# youdle-ionic
+Youdle using Ionic Framework
