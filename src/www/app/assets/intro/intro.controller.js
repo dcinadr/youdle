@@ -5,9 +5,9 @@
     .module('youdle')
     .controller('introController', introController);
 
-  introController.$inject = ['localStorageFactory', 'introFactory', '$state', 'loggerFactory'];
+  introController.$inject = ['localStorageFactory', 'introFactory', '$state', 'loggerFactory', '$ionicHistory'];
 
-  function introController(localStorageFactory, introFactory, $state, loggerFactory) {
+  function introController(localStorageFactory, introFactory, $state, loggerFactory, $ionicHistory) {
     var vm = this;
 
     vm.activate = function() {
@@ -27,6 +27,9 @@
           if (response.data) {
             var userObjectId = localStorageFactory.get('userObjectId');
             loggerFactory.info('com.youdle.intro', 'user returning with valid user token.  userObjectId: ' + userObjectId);
+            $ionicHistory.nextViewOptions({
+              historyRoot: true // if successfully navigating to home page we want to make that the root page
+            });
             $state.go('app.home');
           }
         }, function(errors) {
