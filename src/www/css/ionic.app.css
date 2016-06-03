@@ -9823,7 +9823,8 @@ i {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-right: 5px; }
+  margin-right: 5px;
+  font-size: smaller; }
 
 .home-div-results
 .percentage {
