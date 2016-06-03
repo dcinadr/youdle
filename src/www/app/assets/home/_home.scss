@@ -122,9 +122,20 @@ i
 }
 
 .home-div-results
+.option-text
+{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.home-div-results
 .percentage
 {
-  margin-left: 10px;
+  width: 0%;
+  margin-left: 5px;
+  font-size: smaller;
 }
 
 .home-button-changeVote
@@ -136,11 +147,35 @@ i
   margin-top: 5px;
 }
 
+@-webkit-keyframes percentageAnimation {
+  0% {
+    -webkit-transform: scale3d(0, 1, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes percentageAnimation {
+  0% {
+    transform: scale3d(0, 1, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 .home-div-progress > progress
 {
   margin: 0px;
   margin-top: 6px;
   background-color: white; // this just wakes up the styling for progress bar
+  -webkit-transform-origin: left center 0px;
+  -webkit-animation: percentageAnimation ease-in 1;
+  -webkit-animation-duration: .2s;
+  transform-origin: left center 0px;
+  animation: percentageAnimation ease-in 1;
+  animation-duration: .2s;
 }
 
 .home-div-progress > progress::-webkit-progress-value

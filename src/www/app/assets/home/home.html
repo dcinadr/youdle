@@ -38,11 +38,11 @@
             <div class="row home-div-results" ng-show="card.showResults">
               <div class="col">
                 <div class="row" ng-repeat="option in card.options">
-                  <div class="col">{{option.text}}</div>
-                  <div class="col home-div-progress" ng-class="{'progress-top': option.top}">
+                  <div class="col-50 option-text">{{option.text}}</div>
+                  <div class="col-34 home-div-progress" ng-class="{'progress-top': option.top}">
                     <progress value="{{option.percentage}}" max="100">{{option.percentageDisplayed}}</progress>
                   </div>
-                  <div class="col-20 percentage">
+                  <div class="col percentage">
                       <span>{{option.percentageDisplayed}}</span>
                   </div>
                 </div>
@@ -58,13 +58,10 @@
           </div>
           <div class="col closing-date">
             <div>
-              <span>Closing: {{card.closeDateDisplay}}</span>
+              <span>Poll Closes: {{card.closeDateDisplay}}</span>
             </div>
           </div>
         </div>
-        <!-- <div class="closing-date">
-
-        </div> -->
       </div>
     </div>
   </ion-content>
