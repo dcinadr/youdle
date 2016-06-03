@@ -29,7 +29,7 @@
               {{card.question}}
             </div>
             <div class="row options" ng-hide="card.showResults">
-              <div class="col col-50" ng-repeat="option in card.options">
+              <div class="col col-50 options-col" ng-repeat="option in card.options">
                 <button class="button button-block button-calm home-button-option" ng-click="vm.selectOption(card, option)">
                   {{option.text}}
                 </button>

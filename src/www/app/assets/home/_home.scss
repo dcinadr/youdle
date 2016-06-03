@@ -36,11 +36,18 @@ i
 
 .home-button-option
 {
-  height: 30px;
+  flex-grow: 1;
+  padding: 7px;
   font-size: small;
   min-height: 0px;
-  line-height: 0px;
+  line-height: 15px;
   color: whitesmoke !important;
+}
+
+.options-col
+{
+    flex-direction: column;
+    display: flex;
 }
 
 .home-div-cardHeaderRow
