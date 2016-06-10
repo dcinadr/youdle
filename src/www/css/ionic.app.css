@@ -9879,63 +9879,52 @@ i {
   font-size: x-small;
   margin-bottom: -5px; }
 
-.intro-view {
+.intro {
   background: linear-gradient(145deg, #667494, #021F54 30%); }
-
-.intro-content {
-  height: 100%; }
-
-.intro-col-titleMessage {
-  margin-top: 50px; }
-
-.intro-title {
-  color: whitesmoke;
-  font-style: italic;
-  font-size: 20pt;
-  font-weight: bold;
-  font-family: 'Merienda', Cursive; }
-
-.intro-message {
-  color: whitesmoke;
-  font-style: italic;
-  font-size: 12pt;
-  font-weight: bold;
-  font-family: 'Merienda', Cursive; }
-
-.intro-logo {
-  padding: 40px; }
-
-.intro-logo
+  .intro .content {
+    height: 100%; }
+  .intro .col-titleMessage {
+    margin-top: 50px; }
+  .intro .title {
+    color: whitesmoke;
+    font-style: italic;
+    font-size: 20pt;
+    font-family: 'Merienda', Cursive; }
+  .intro .message {
+    color: whitesmoke;
+    font-style: italic;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: 'Merienda', Cursive; }
+  .intro .logo {
+    padding: 40px; }
+  .intro .logo
 img {
-  width: 100%;
-  max-width: 328px; }
-
-.intro-button-login,
-.intro-button-login.activated,
-.intro-button-login.active,
-.intro-button-login:hover,
-.intro-button-login:focus {
-  width: 100%;
-  font-weight: bold;
-  color: #021F54 !important; }
-
-.intro-div-signup {
-  position: absolute;
-  bottom: 20px;
-  width: 100%; }
-
-.intro-div-signup > div {
-  text-align: center; }
-
-.intro-button-signup,
-.intro-button-signup.active,
-.intro-button-signup.activated
-.intro-button-signup:hover,
-.intro-button-signup:focus {
-  width: 100%;
-  font-weight: bold;
-  color: #021F54 !important;
-  background-color: #0071BC !important; }
+    width: 100%;
+    max-width: 328px; }
+  .intro .button-login,
+  .intro .button-login.activated,
+  .intro .button-login.active,
+  .intro .button-login:hover,
+  .intro .button-login:focus {
+    width: 100%;
+    font-weight: bold;
+    color: #021F54 !important; }
+  .intro .div-signup {
+    position: absolute;
+    bottom: 20px;
+    width: 100%; }
+  .intro .div-signup > div {
+    text-align: center; }
+  .intro .button-signup,
+  .intro .button-signup.active,
+  .intro .button-signup.activated
+.button-signup:hover,
+  .intro .button-signup:focus {
+    width: 100%;
+    font-weight: bold;
+    color: #021F54 !important;
+    background-color: #0071BC !important; }
 
 .login-view {
   background: linear-gradient(#0071BC, white 30%); }
