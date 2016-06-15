@@ -13,27 +13,45 @@
 	    	<div class="col">
 					<div class="list list-inset">
 	          <label class="item item-input">
-	            <input type="text" placeholder="First name" ng-model="vm.first" name="vFirst" required>
+                 
+	            <input type="text" placeholder="First name" ng-model="vm.first" name="vFirst" ng-blur="vm.isValidValues()" required>
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.firstNameValid && !vm.initialState" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.firstNameValid && !vm.initialState)" ></i>
 	          </label>
 	          <label class="item item-input">
-	            <input type="text" placeholder="Last name" ng-model="vm.last">
+	            <input type="text" placeholder="Last name" ng-model="vm.last" ng-blur="vm.isValidValues()">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.lastNameValid && !vm.initialState" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.lastNameValid && !vm.initialState)" ></i>
+	
+	          </label>
+			  <label class="item item-input">
+	            <input type="email" placeholder="Email" ng-model="vm.email" name="vEmail" ng-blur="vm.isValidValues()" ng-keypress="vm.isValidValues()" required>
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.emailValid && !vm.initialState" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.emailValid && !vm.initialState)" ></i>
+	
 	          </label>
 						<label class="item item-input">
-	            <input type="email" placeholder="Email" ng-model="vm.email" name="vEmail" required>
+	            <input type="text" placeholder="Username" ng-model="vm.username" ng-blur="vm.isValidValues()">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.userNameValid && !vm.initialState" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.userNameValid && !vm.initialState)" ></i>
+	
 	          </label>
 						<label class="item item-input">
-	            <input type="text" placeholder="Username" ng-model="vm.username">
+	            <input type="password" placeholder="Password" ng-model="vm.password" name="vPassword"  ng-blur="vm.isValidValues()" required>
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.passwordValid && !vm.initialState" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.passwordValid && !vm.initialState)" ></i>
+	
 	          </label>
-						<label class="item item-input">
-	            <input type="password" placeholder="Password" ng-model="vm.password" name="vPassword" required>
-	          </label>
-						<label class="item item-input">
-	            <input type="password" placeholder="Confirm password" ng-model="vm.passwordConfirm" name="vConfirmPassword" required>
-	          </label>
+			 <label class="item item-input">
+	            <input type="password" placeholder="Confirm password" ng-model="vm.passwordConfirm" name="vConfirmPassword" ng-blur="vm.isValidValues()" required>
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.passwordConfirmValid && !vm.initialState" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.passwordConfirmValid && !vm.initialState)" ></i>
+	
+             </label>
 	        </div>
 	    	</div>
 	    </div>
-			<div class="row">
+			<!--<div class="row">
 				<div class="col">
 					<div ng-show="registerForm.$submitted">
 						<div class="signup-error-text" ng-show="registerForm.vFirst.$error.required">
@@ -50,7 +68,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<div class="row signup-div-submit">
 				<div class="col col-100 text-center">
 					<button type="button" class="button button-calm signup-button-submit" ng-click="vm.submitClick()" name="button">Submit</button>

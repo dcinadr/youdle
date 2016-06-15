@@ -12,23 +12,49 @@
   {
     var vm = this;
 
+
     vm.activate = function()
     {
+        //initial state.
+        vm.initialState = true;
+        vm.firstNameValid = false;
+        vm.lastNameValid = false;
+        vm.emailValid = false;
+        vm.passwordValid = false;
+        vm.passwordConfirmValid = false;
+        vm.userNameValid = false;
+     }
 
+    vm.isValidValues = function () {
+       
+       vm.firstNameValid = (vm.first != undefined) && (vm.last.length > 0);
+       vm.lastNameValid = (vm.last!=undefined) && (vm.last.length >0);
+       vm.emailValid = validateEmail(vm.email);
+       vm.userNameValid = ((vm.username != undefined) && (vm.username.length >=3));
+       vm.passwordValid = ((vm.password !=undefined) && (vm.password.length>=6)) ;
+       vm.passwordConfirmValid = ((vm.password === vm.passwordConfirm) && vm.passwordValid);
+       return (vm.firstNameValid && vm.lastNameValid && vm.emailValid && vm.passwordValid && vm.passwordConfirmValid);
     }
-
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
     vm.submitClick = function()
     {
-      if (!vm.first || !vm.email || !vm.password)
-      {
-        console.log('invalid data.  will not submit registration request.');
-        return;
-      }
-      if (vm.password != vm.passwordConfirm)
-      {
-        console.log('passwords do not match.  will not submit registration request.');
-        return;
-      }
+        vm.initialState = false;
+      if (!vm.isValidValues())
+            return;
+
+      //if (!vm.first || !vm.email || !vm.password)
+      //{
+      //  console.log('invalid data.  will not submit registration request.');
+      //  return;
+      //}
+      //if (vm.password != vm.passwordConfirm)
+      //{
+      //  console.log('passwords do not match.  will not submit registration request.');
+      //  return;
+      //}
 
       signupFactory.register(
         {

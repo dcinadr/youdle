@@ -50,3 +50,4 @@ key
 *.user
 *.user
 src/YoudlePrototype.jsproj.user
+/src/bin/Android/Debug
