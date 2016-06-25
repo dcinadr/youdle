@@ -8,25 +8,30 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.src901663"
+            "PACKAGE_NAME": "com.capitasync.youdle"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.src901663"
+            "PACKAGE_NAME": "com.capitasync.youdle"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.src901663"
+            "PACKAGE_NAME": "com.capitasync.youdle"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.src901663"
+            "PACKAGE_NAME": "com.capitasync.youdle"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.src901663"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.src901663"
+            "PACKAGE_NAME": "com.capitasync.youdle"
         },
         "ionic-plugin-deploy": {
-            "PACKAGE_NAME": "com.ionicframework.src901663"
+            "PACKAGE_NAME": "com.capitasync.youdle"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.capitasync.youdle"
+        },
+        "phonegap-facebook-plugin": {
+            "APP_ID": "1066959203376447",
+            "APP_NAME": "Youdle",
+            "PACKAGE_NAME": "com.capitasync.youdle"
         }
     },
     "dependent_plugins": {}

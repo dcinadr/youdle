@@ -1,17 +1,17 @@
 <ion-view hide-nav-bar="true" class="intro">
-	<div class="content">
+		<div class="content">
         <div class="row">
-            <div class="col col-titleMessage">
+            <div class="col title">
 			    <div class="row">
 				    <div class="col text-center">
-					    <span class="title">
+					    <span>
 			              Welcome to Youdle
 					    </span>
 				    </div>
 				</div>
 				<div class="row text-center">
-				    <div class="col-80 col-offset-10 text-center col-message">
-					    <span class="message">
+				    <div class="col-80 col-offset-10 text-center message">
+					    <span>
 		                  share your opinion and experience the world's reaction...
 		                </span>
 					</div>
@@ -24,14 +24,33 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-80 col-offset-10 text-center">
-                <button type="button" class="button button-light button-login" ui-sref="login" name="button">Login</button>
+            <div class="col">
+                <div class="row login-message">
+                    <div>
+                        <span>
+                            Please login
+                        </span>
+                    </div>
+                </div>
+                <div class="row button-container">
+                    <div class="col">
+                        <button type="button" class="button icon-left fa fa-facebook-square button-light button-login" ng-click="vm.facebookClick()" name="button">
+                            <span>facebook</span>
+                        </button>
+                        <button type="button" class="button icon-left fa fa-google-plus-square button-light button-login" name="button">
+                            <span>Google+</span>
+                        </button>
+                        <button type="button" class="button icon-left fa fa-envelope button-light button-login" ui-sref="login" name="button">
+                            <span>Email</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="div-signup">
+    <!--<div class="signup">
         <div class="col-80 col-offset-10 text-center">
             <button type="button" class="button button-signup" ui-sref="signup" name="button">Sign Up</button>
         </div>
-    </div>
+    </div>-->
 </ion-view>

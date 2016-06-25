@@ -4,7 +4,8 @@ $intro-background: $dark;  // for darker theme
 .intro
 {
     //background: linear-gradient(145deg, #ABD0E8, $intro-background 40%);  // option for lighter theme
-    background: linear-gradient(145deg, #667494, $intro-background 30%);  // option for darker theme
+    background: linear-gradient(155deg, #006AB4, $intro-background 30%);  // option for darker theme
+    font-family: $font-family;
 
     .content
     {
@@ -12,12 +13,12 @@ $intro-background: $dark;  // for darker theme
       height: 100%;
     }
 
-    .col-titleMessage
+    .title
     {
       margin-top: 50px;
     }
 
-    .title
+    .title span
     {
       color: whitesmoke;
       font-style: italic;
@@ -25,7 +26,7 @@ $intro-background: $dark;  // for darker theme
       font-family: 'Merienda', Cursive;
     }
 
-    .message
+    .message span
     {
       color: whitesmoke;
       font-style: italic;
@@ -39,11 +40,67 @@ $intro-background: $dark;  // for darker theme
       padding: 40px;
     }
 
-    .logo
-    img
+    .logo img
     {
       width: 100%;
       max-width: 328px;
+    }
+
+    .login-message span 
+    {
+        color: whitesmoke;
+        font-weight: bold;
+        font-size: small;
+    }
+
+    .button-container button
+    {
+        margin-top: 5px;
+    }
+
+    .button.icon-left:before
+    {
+        line-height: 47px;
+    }
+
+    .button-container span
+    {
+        /* needed to override fontawesomes changes */ 
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        font-stretch: normal;
+        font-size: medium;
+        line-height: 3;
+        margin-left: -15px;
+    }
+
+    .button-container .fa-facebook-square
+    {
+        color: #3b5998;
+    }
+    .button-container .fa-facebook-square span
+    {
+        font-family: helvetica;
+    }
+
+    .button-container .fa-google-plus-square
+    {
+        color: #D62D20;
+    }
+    .button-container .fa-google-plus-square span
+    {
+        font-family: roboto, sans-serif;
+    }
+
+    .button-container .fa-envelope
+    {
+        color: $intro-background;
+    }
+    .button-container .fa-envelope span
+    {
+        font-family: $font-family;
+        margin-left: -20px;
     }
 
     .button-login,
@@ -53,25 +110,23 @@ $intro-background: $dark;  // for darker theme
     .button-login:focus
     {
       width: 100%;
-      font-weight: bold;
-      color: $intro-background !important;
     }
 
-    .div-signup
+    .signup
     {
       position: absolute;
       bottom: 20px;
       width: 100%;
     }
 
-    .div-signup > div
+    .signup > div
     {
       text-align: center;
     }
 
-    .button-signup,
+    /*.button-signup,
     .button-signup.active,
-    .button-signup.activated
+    .button-signup.activated,
     .button-signup:hover,
     .button-signup:focus
     {
@@ -79,6 +134,6 @@ $intro-background: $dark;  // for darker theme
       font-weight: bold;
       color: $intro-background !important;
       background-color: $balanced !important;
-    }
+    }*/
 }
 

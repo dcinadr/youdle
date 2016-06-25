@@ -11,7 +11,7 @@
   function addOptionUserApiFactory($http)
   {
     var service = {
-      post, post
+      post: post
     };
 
     return service;

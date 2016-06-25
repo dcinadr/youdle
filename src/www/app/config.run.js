@@ -18,5 +18,20 @@ angular.module('youdle')
       if (window.StatusBar) {
         StatusBar.styleDefault();
       }
+
+      if (!window.cordova)
+      {
+        console.log("loading facebook plugin for browser...");
+        var e = document.createElement('script');
+        e.src = 'lib/facebook-connect-plugin/index.js';
+        e.async = true;
+        document.getElementById('fb-plugin').appendChild(e);
+        console.log("facebook plugin loaded!");
+
+        // var appID = 1066959203376447;
+        // var version = 'v2.6'; // or leave blank and default is v2.0
+        // facebookConnectPlugin.browserInit(appID, version);
+      }
+
     });
   });

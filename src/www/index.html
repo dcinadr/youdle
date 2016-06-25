@@ -4,26 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-    <!-- <link href="app/assets/intro/intro.css" rel="stylesheet">
-    <link href="app/assets/signup/signup.css" rel="stylesheet">
-    <link href="app/assets/login/login.css" rel="stylesheet">
-    <link href="app/assets/home/home.css" rel="stylesheet"> -->
-    <!-- <link href="app/app.css" rel="stylesheet"> -->
+
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merienda%3A400%2C700" rel="stylesheet" type="text/css">
     <link href="lib/hawcons/filled/style.css" rel="stylesheet">
     <link href="lib/animate.css/animate.min.css" rel="stylesheet">
+
     <!-- backendless -->
     <script src="lib/backendless/backendless.js"></script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
     <script src="lib/dateformat/lib/dateformat.js"></script>
+
+    <!-- facebook -->
+    <!-- used for local dev in the browser -->
+    <!-- <script src='lib/facebook-connect-plugin/index.js'></script> -->
+
     <!-- cordova script (this will be a 404 during development) -->
     <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
-<!-- <script src="cordova.js"></script> -->
+    <!-- <script src="cordova.js"></script> -->
 
     <!-- youdle js -->
     <script src="app/shared/service/service.module.js"></script>
@@ -50,6 +53,12 @@
 
 </head>
 <body ng-app="youdle">
+
+  <!-- fb-root is required to wire up facebook sdk -->
+  <div id="fb-root"></div>
+
+  <div id="fb-plugin"></div>
+
   <!-- <ion-nav-bar class="bar index-header-bar bar-calm" align-title="center">
     <ion-nav-back-button class="button-clear">
       <i class="ion-chevron-left"></i>
