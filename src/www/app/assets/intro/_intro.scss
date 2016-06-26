@@ -1,84 +1,139 @@
 //$intro-background: #E9F6FF;  // for lighter theme
 $intro-background: $dark;  // for darker theme
 
-.intro-view
+.intro
 {
-  //background: linear-gradient(145deg, #ABD0E8, $intro-background 40%);  // option for lighter theme
-  background: linear-gradient(145deg, #667494, $intro-background 30%);  // option for darker theme
+    //background: linear-gradient(145deg, #ABD0E8, $intro-background 40%);  // option for lighter theme
+    background: linear-gradient(155deg, #006AB4, $intro-background 30%);  // option for darker theme
+    font-family: $font-family;
+
+    .content
+    {
+      // background-color: $intro-background;
+      height: 100%;
+    }
+
+    .title
+    {
+      margin-top: 50px;
+    }
+
+    .title span
+    {
+      color: whitesmoke;
+      font-style: italic;
+      font-size: 20pt;
+      font-family: 'Merienda', Cursive;
+    }
+
+    .message span
+    {
+      color: whitesmoke;
+      font-style: italic;
+      font-size: 12pt;
+      font-weight: bold;
+      font-family: 'Merienda', Cursive;
+    }
+
+    .logo
+    {
+      padding: 40px;
+    }
+
+    .logo img
+    {
+      width: 100%;
+      max-width: 328px;
+    }
+
+    .login-message span 
+    {
+        color: whitesmoke;
+        font-weight: bold;
+        font-size: small;
+    }
+
+    .button-container button
+    {
+        margin-top: 5px;
+    }
+
+    .button.icon-left:before
+    {
+        line-height: 47px;
+    }
+
+    .button-container span
+    {
+        /* needed to override fontawesomes changes */ 
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        font-stretch: normal;
+        font-size: medium;
+        line-height: 3;
+        margin-left: -15px;
+    }
+
+    .button-container .fa-facebook-square
+    {
+        color: #3b5998;
+    }
+    .button-container .fa-facebook-square span
+    {
+        font-family: helvetica;
+    }
+
+    .button-container .fa-google-plus-square
+    {
+        color: #D62D20;
+    }
+    .button-container .fa-google-plus-square span
+    {
+        font-family: roboto, sans-serif;
+    }
+
+    .button-container .fa-envelope
+    {
+        color: $intro-background;
+    }
+    .button-container .fa-envelope span
+    {
+        font-family: $font-family;
+        margin-left: -20px;
+    }
+
+    .button-login,
+    .button-login.activated,
+    .button-login.active,
+    .button-login:hover,
+    .button-login:focus
+    {
+      width: 100%;
+    }
+
+    .signup
+    {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+    }
+
+    .signup > div
+    {
+      text-align: center;
+    }
+
+    /*.button-signup,
+    .button-signup.active,
+    .button-signup.activated,
+    .button-signup:hover,
+    .button-signup:focus
+    {
+      width: 100%;
+      font-weight: bold;
+      color: $intro-background !important;
+      background-color: $balanced !important;
+    }*/
 }
 
-.intro-content
-{
-  // background-color: $intro-background;
-  height: 100%;
-}
-
-.intro-col-titleMessage
-{
-  margin-top: 50px;
-}
-
-.intro-title
-{
-  color: whitesmoke;
-  font-style: italic;
-  font-size: 20pt;
-  font-weight: bold;
-  font-family: 'Merienda', Cursive;
-}
-
-.intro-message
-{
-  color: whitesmoke;
-  font-style: italic;
-  font-size: 12pt;
-  font-weight: bold;
-  font-family: 'Merienda', Cursive;
-}
-
-.intro-logo
-{
-  padding: 40px;
-}
-
-.intro-logo
-img
-{
-  width: 100%;
-  max-width: 328px;
-}
-
-.intro-button-login,
-.intro-button-login.activated,
-.intro-button-login.active,
-.intro-button-login:hover,
-.intro-button-login:focus
-{
-  width: 100%;
-  font-weight: bold;
-  color: $intro-background !important;
-}
-
-.intro-div-signup
-{
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-}
-
-.intro-div-signup > div
-{
-  text-align: center;
-}
-
-.intro-button-signup,
-.intro-button-signup.active,
-.intro-button-signup.activated
-.intro-button-signup:hover,
-.intro-button-signup:focus
-{
-  width: 100%;
-  font-weight: bold;
-  color: $intro-background !important;
-  background-color: $balanced !important;
-}

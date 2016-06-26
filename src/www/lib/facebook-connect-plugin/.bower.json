@@ -1,0 +1,12 @@
+{
+  "name": "facebook-connect-plugin",
+  "_cacheHeaders": {
+    "ETag": "W/\"c6afb167e6fc0d650eb19a6e7f4d977b7715d9ae\"",
+    "Content-Type": "application/javascript;charset=utf-8"
+  },
+  "_release": "e-tag:W/\"c6afb16",
+  "main": "index.js",
+  "_source": "https://cdn.rawgit.com/Wizcorp/phonegap-facebook-plugin/master/facebookConnectPlugin.js",
+  "_target": "*",
+  "_originalSource": "https://cdn.rawgit.com/Wizcorp/phonegap-facebook-plugin/master/facebookConnectPlugin.js"
+}

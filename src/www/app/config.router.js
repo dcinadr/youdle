@@ -18,6 +18,8 @@ angular.module('youdle')
                   return $ocLazyLoad.load({
                     files: [
                       'app/shared/service/localStorage.factory.js',
+                      'app/shared/api/api.facebook.login.js',
+                      'app/shared/service/facebook.factory.js',
                       'app/assets/intro/intro.factory.js',
                       'app/assets/intro/intro.controller.js'
                     ]
