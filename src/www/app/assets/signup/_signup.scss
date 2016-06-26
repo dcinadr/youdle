@@ -82,3 +82,67 @@ input.ng-invalid.ng-touched
   font-weight: bold;
   padding-left: 10px;
 }
+
+.center
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-input-warning {
+    color:red;
+    padding-right:1em;
+}
+.icon-input-valid{
+    color:lawngreen;
+    padding-right:1em;
+}
+.input-border-warning{
+    outline: none;
+    border-color: red;
+    box-shadow: 0 0 10px #9ecaed;
+}
+.input-border-valid {
+    outline: none;
+    box-shadow: 0 0 10px lawngreen;
+    
+}
+
+
+.callout {
+    position:relative ;
+    margin: 5px 0;
+    padding: 5px 5px;
+    background-color: red;
+    right: -10px;
+    top: -20px;
+    z-index: 2;
+    width: initial;
+    max-width: 70%;
+         /* easy rounded corners for modern browsers */
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    
+    
+
+}
+.callout .notch {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    margin: 0;
+    border-top: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid red;
+    padding: 0;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    _border-right-color: pink;
+    _border-left-color: pink;
+    _filter: chroma(color=pink);
+}

@@ -16,23 +16,28 @@
     vm.activate = function()
     {
         //initial state.
-        vm.initialState = true;
-        vm.firstNameValid = false;
-        vm.lastNameValid = false;
-        vm.emailValid = false;
-        vm.passwordValid = false;
-        vm.passwordConfirmValid = false;
-        vm.userNameValid = false;
+        vm.initialValidation = false;
+        vm.firstNameValid = true;
+        vm.lastNameValid = true;
+        vm.emailValid = true;
+        vm.userEmailErrorMsg = "";
+        vm.passwordValid = true;
+        vm.passwordConfirmValid = true;
+        vm.userNameValid = true;
+        vm.userNameErrMsg = "";
+        vm.showGeneralErrMsg = false;
      }
 
     vm.isValidValues = function () {
        
-       vm.firstNameValid = (vm.first != undefined) && (vm.last.length > 0);
-       vm.lastNameValid = (vm.last!=undefined) && (vm.last.length >0);
+       vm.firstNameValid = ((vm.first != undefined) && (vm.first.length > 0)) ;
+       vm.lastNameValid = (vm.last != undefined) && (vm.last.length > 0) ;
        vm.emailValid = validateEmail(vm.email);
-       vm.userNameValid = ((vm.username != undefined) && (vm.username.length >=3));
-       vm.passwordValid = ((vm.password !=undefined) && (vm.password.length>=6)) ;
-       vm.passwordConfirmValid = ((vm.password === vm.passwordConfirm) && vm.passwordValid);
+       vm.userEmailErrorMsg = vm.emailValid ? "" : "Email is not in the correct format";
+
+       vm.userNameValid = ((vm.username != undefined) && (vm.username.length >= 3));
+       vm.passwordValid = ((vm.password != undefined) && (vm.password.length >= 6));
+       vm.passwordConfirmValid = ((vm.password === vm.passwordConfirm) && vm.passwordValid );
        return (vm.firstNameValid && vm.lastNameValid && vm.emailValid && vm.passwordValid && vm.passwordConfirmValid);
     }
     function validateEmail(email) {
@@ -41,20 +46,10 @@
     }
     vm.submitClick = function()
     {
-        vm.initialState = false;
+      vm.initialValidation = true;
       if (!vm.isValidValues())
             return;
 
-      //if (!vm.first || !vm.email || !vm.password)
-      //{
-      //  console.log('invalid data.  will not submit registration request.');
-      //  return;
-      //}
-      //if (vm.password != vm.passwordConfirm)
-      //{
-      //  console.log('passwords do not match.  will not submit registration request.');
-      //  return;
-      //}
 
       signupFactory.register(
         {
@@ -73,11 +68,20 @@
         },
         function(errors)
         {
-          // TODO: handle specific errors (identified in backendless documentation)
-          console.error('registration error', errors);
+            //We should only handle 3033 code, for now, and display the message to the user.
+            //All other items are internal errors or are already validated before we submit to the backend (to save round trips).
+            switch (errors.data.code) {
+                case 3033://Email already exists
+                    vm.emailValid = false;
+                    vm.userEmailErrorMsg = "This email already exists";
+                    return;
+                default:
+                    vm.showGeneralErrMsg = true;
+
+                    console.error('registration error', errors);
+              }
         });
     }
 
-    vm.activate();
   }
 })();

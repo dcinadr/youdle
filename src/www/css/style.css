@@ -5,21 +5,8 @@
   justify-content: center;
 }
 
-.icon-input-warning {
-    color:red;
-    padding-right:1em;
-}
-.icon-input-valid{
-    color:lawngreen;
-    padding-right:1em;
-}
-.input-border-warning{
-    outline: none;
-    border-color: red;
-    box-shadow: 0 0 10px #9ecaed;
-}
-.input-border-valid {
-    outline: none;
-    box-shadow: 0 0 10px lawngreen;
-    
-}
+
+
+
+
+

@@ -1,4 +1,4 @@
-<ion-view title="Youdle Signup" class="signup-view">
+<ion-view title="Youdle Signup" class="signup-view" ng-init="vm.activate()">
 	<ion-content>
 		<div class="row signup-title-div">
 			<h1 class="signup-title">Youdle!</h1>
@@ -15,60 +15,95 @@
 	          <label class="item item-input">
                  
 	            <input type="text" placeholder="First name" ng-model="vm.first" name="vFirst" ng-blur="vm.isValidValues()" required>
-                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.firstNameValid && !vm.initialState" ></i>
-                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.firstNameValid && !vm.initialState)" ></i>
+                <div ng-show="vm.initialValidation">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.firstNameValid " ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="vm.firstNameValid" ></i>
+                 </div>
 	          </label>
+              <div ng-show="vm.initialValidation">
+                            <div  class="callout" ng-show="!vm.firstNameValid"  >
+                            First name is required
+                            <b class="notch"></b>
+                                </div>
+              </div>	
 	          <label class="item item-input">
 	            <input type="text" placeholder="Last name" ng-model="vm.last" ng-blur="vm.isValidValues()">
-                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.lastNameValid && !vm.initialState" ></i>
-                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.lastNameValid && !vm.initialState)" ></i>
-	
+                <div ng-show="vm.initialValidation">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.lastNameValid " ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="vm.lastNameValid" ></i>
+	            </div>
 	          </label>
+              <div ng-show="vm.initialValidation">
+                            <div  class="callout" ng-show="!vm.firstNameValid"  >
+                            Last name is required
+                            <b class="notch"></b>
+                            </div>    
+              </div>	
 			  <label class="item item-input">
 	            <input type="email" placeholder="Email" ng-model="vm.email" name="vEmail" ng-blur="vm.isValidValues()" ng-keypress="vm.isValidValues()" required>
-                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.emailValid && !vm.initialState" ></i>
-                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.emailValid && !vm.initialState)" ></i>
-	
+                <div ng-show="vm.initialValidation">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.emailValid" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.emailValid )" ></i>
+                </div>
 	          </label>
-						<label class="item item-input">
+              <div ng-show="vm.initialValidation">
+                            <div  class="callout" ng-show="!vm.emailValid && vm.userEmailErrorMsg.length>0"  >
+                            {{vm.userEmailErrorMsg}}
+                            <b class="notch"></b>
+                             </div>
+              </div>	          
+                       </div>
+              <label class="item item-input">
 	            <input type="text" placeholder="Username" ng-model="vm.username" ng-blur="vm.isValidValues()">
-                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.userNameValid && !vm.initialState" ></i>
-                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.userNameValid && !vm.initialState)" ></i>
-	
+                  <div ng-show="vm.initialValidation">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.userNameValid" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="vm.userNameValid " ></i>
+                                        </div>
 	          </label>
-						<label class="item item-input">
+            <div ng-show="vm.initialValidation">
+             <div class="callout" ng-show="!vm.userNameValid"  >
+                           Username must have 3 or more characters.
+                            <b class="notch"></b>
+              </div>
+             </div>
+			 <label class="item item-input">
 	            <input type="password" placeholder="Password" ng-model="vm.password" name="vPassword"  ng-blur="vm.isValidValues()" required>
-                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.passwordValid && !vm.initialState" ></i>
-                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.passwordValid && !vm.initialState)" ></i>
-	
+                 <div ng-show="vm.initialValidation">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.passwordValid " ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="vm.passwordValid " ></i>
+                     </div>
 	          </label>
+              <div ng-show="vm.initialValidation">
+                            <div  class="callout" ng-show="!vm.passwordValid"  >
+                            Password must be 6 characters
+                            <b class="notch"></b>
+                            </div>
+              </div>	        
 			 <label class="item item-input">
 	            <input type="password" placeholder="Confirm password" ng-model="vm.passwordConfirm" name="vConfirmPassword" ng-blur="vm.isValidValues()" required>
-                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.passwordConfirmValid && !vm.initialState" ></i>
-                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="(vm.passwordConfirmValid && !vm.initialState)" ></i>
-	
+                 <div ng-show="vm.initialValidation">
+                <i class="icon ion-android-cancel icon-input-warn" ng-show="!vm.passwordConfirmValid" ></i>
+                <i class="icon ion-checkmark-circled icon-input-valid" ng-show="vm.passwordConfirmValid" ></i>
+                     </div>
              </label>
-	        </div>
+               <div ng-show="vm.initialValidation">
+                            <div  class="callout" ng-show="!vm.passwordConfirmValid"  >
+                            Password and confirm password do not match
+                            <b class="notch"></b>
+                            </div>
+                </div>
 	    	</div>
-	    </div>
-			<!--<div class="row">
-				<div class="col">
-					<div ng-show="registerForm.$submitted">
-						<div class="signup-error-text" ng-show="registerForm.vFirst.$error.required">
-							First name is required
-						</div>
-						<div class="signup-error-text" ng-show="registerForm.vEmail.$error.required">
-							Email is required
-						</div>
-						<div class="signup-error-text" ng-show="registerForm.vPassword.$error.required">
-							Password is required
-						</div>
-						<div class="signup-error-text" ng-show="registerForm.vConfirmPassword.$error.required">
-							Passwords do not match
-						</div>
-					</div>
-				</div>
-			</div>-->
+          </div>
+
+            <div class="row">
+                <div class="col">
+                    <div ng-show="vm.showGeneralErrMsg">
+                        <div class="signup-error-text">
+                            Oops, an error has occured during the registration process. Our Support Group has been notified.
+                        </div>
+                    </div>
+                </div>
+            </div>
 			<div class="row signup-div-submit">
 				<div class="col col-100 text-center">
 					<button type="button" class="button button-calm signup-button-submit" ng-click="vm.submitClick()" name="button">Submit</button>
