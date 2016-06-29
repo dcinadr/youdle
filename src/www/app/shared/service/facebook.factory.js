@@ -7,18 +7,20 @@
     .module('youdle.service')
     .factory('facebookFactory', facebookFactory);
 
-  facebookFactory.$inject = ['$q'];
+  facebookFactory.$inject = ['$q', 'facebookLoginApiFactory'];
 
-  function facebookFactory($q)
+  function facebookFactory($q, facebookLoginApiFactory)
   {
     var isFacebookInit = false;
 
     var service = {
       init: init,
+      backendlessLogin: backendlessLogin,
       login: login,
       getIsFacebookInit: getIsFacebookInit,
       initFacebookIfNeeded: initFacebookIfNeeded,
-      getLoginStatus: getLoginStatus
+      getLoginStatus: getLoginStatus,
+      api: api
     };
 
     function getIsFacebookInit()
@@ -59,11 +61,23 @@
       }
     }
 
+    function backendlessLogin(accessToken)
+    {
+      var data = {
+        "accessToken": accessToken,
+        "fieldsMapping": {
+          'name': 'name',
+          'email': 'email',
+        }
+      };
+      return facebookLoginApiFactory.post(data);
+    }
+
     function login()
     {
       var deferred = $q.defer();
 
-      facebookConnectPlugin.login(['public_profile', 'email'],
+      facebookConnectPlugin.login(['public_profile', 'email', 'user_birthday'],
         function(response)
         {
           deferred.resolve(response);
@@ -90,6 +104,23 @@
           deferred.reject(response);
         }
       );
+
+      return deferred.promise;
+    }
+
+    function api(requestPath, permissions)
+    {
+      var deferred = $q.defer();
+
+      facebookConnectPlugin.api(requestPath, permissions,
+        function(response)
+        {
+          deferred.resolve(response);
+        },
+        function(response)
+        {
+          deferred.reject(response);
+        });
 
       return deferred.promise;
     }

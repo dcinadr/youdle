@@ -14,7 +14,6 @@
     vm.activate = function ()
     {
       startFacebookCheck();
-      autoLogin();
     }
 
     vm.activate();
@@ -48,41 +47,43 @@
     function initializeFacebook()
     {
       introFactory.facebookInit();
-      getFacebookLoginStatus();
+      autoLogin();
     }
 
     vm.facebookClick = function ()
     {
       introFactory.facebookLogin()
+        .then(facebookLoginSuccess, facebookLoginFailed);
+    }
+
+    function facebookLoginSuccess(response)
+    {
+      console.log('Log in to facebook successful.')
+      console.log(response);
+      var accessToken = response.authResponse.accessToken;
+
+      // TODO - calculate age and add to parameters
+      introFactory.backendlessFacebookLogin(accessToken)
         .then(function(response)
         {
-          console.log('Log in to facebook successful.')
-          console.log(response);
-
-          // TODO - register in backendless
-          // TODO - redirect to home page
+          navigateHome();
+          console.log('Backendless facebook login success!');
+          localStorageFactory.set('userObjectId', response.data.objectId);
+          localStorageFactory.set('userToken', response.data['user-token']);
+          loggerFactory.info('com.youdle.intro', 'user logged in to backendless successfully with facebook.  userObjectId: ' + response.data.objectId);
         },
         function(errors)
         {
-          // TODO - log in backendless
-          // TODO - display error message back to user
-          console.error('Log in to facebook failed.');
-          console.error(errors);
-        });
+          console.error('Backendless facebook login failed!', errors);
+          // TODO - handle error / display to user
+        })
+    }
 
-      // facebookConnectPlugin.getLoginStatus(
-      //   function(success) {
-      //     console.log(success);
-      //   }
-      // );
-        //introFactory.facebookLogin().
-        //    then(function (response)
-        //    {
-        //        // todo
-        //    }, function (errors)
-        //    {
-        //        // todo
-        //    });
+    function facebookLoginFailed(errors)
+    {
+      // TODO - display error message back to user
+      console.error('Log in to facebook failed.');
+      console.error(errors);
     }
 
     function getFacebookLoginStatus()
@@ -101,24 +102,83 @@
     }
 
     // if the user has already logged in previously automatically login the user in
-    function autoLogin() {
+    function autoLogin()
+    {
+      console.log('Checking current login status for auto login...')
       var userToken = localStorageFactory.get('userToken');
-      if (!userToken) {
+      if (!userToken)
+      {
+        console.log('User not currently logged in.')
         return;
       }
       introFactory.isUserValid(userToken)
-        .then(function(response) {
-          if (response.data) {
-            var userObjectId = localStorageFactory.get('userObjectId');
-            loggerFactory.info('com.youdle.intro', 'user returning with valid user token.  userObjectId: ' + userObjectId);
-            $ionicHistory.nextViewOptions({
-              historyRoot: true // if successfully navigating to home page we want to make that the root page
-            });
-            $state.go('app.home');
-          }
-        }, function(errors) {
-          console.error('problem checking if user is valid', errors);
-        });
+        .then(isUserValidSuccess, isUserValidFailed);
+    }
+
+    function isUserValidSuccess(response)
+    {
+      if (response.data)
+      {
+        var userObjectId = localStorageFactory.get('userObjectId');
+        console.log('User is valid in backendless.')
+
+        introFactory.getUserProperties(userObjectId)
+          .then (getUserPropertiesSuccess, getUserPropertiesFailed);
+      }
+      else
+      {
+        console.log('User is not currently valid in backendless.  Not allowing auto login access.')
+      }
+    }
+
+    function getUserPropertiesSuccess(response)
+    {
+      if (response.data.socialAccount == 'Facebook')
+      {
+        introFactory.getFacebookLoginStatus()
+          .then(getFacebookLoginStatusSuccess, getFacebookLoginStatusFailed);
+      }
+      else
+      {
+        console.log('User is a valid email user.  Allowing access.')
+        var userObjectId = localStorageFactory.get('userObjectId');
+        loggerFactory.info('com.youdle.intro', 'email user returning with valid user token.  userObjectId: ' + userObjectId);
+        navigateHome();
+      }
+    }
+
+    function getFacebookLoginStatusSuccess(response)
+    {
+      if (response.status == 'connected')
+      {
+        console.log('User is also connected to facebook.  Allowing access.')
+        var userObjectId = localStorageFactory.get('userObjectId');
+        loggerFactory.info('com.youdle.intro', 'facebook user returning with valid user token.  userObjectId: ' + userObjectId);
+        navigateHome();
+      }
+    }
+
+    function getFacebookLoginStatusFailed(errors)
+    {
+      console.error('Failure checking facebook login status.', errors)
+    }
+
+    function getUserPropertiesFailed(errors)
+    {
+      console.error('Failure retrieving user properties.', errors);
+    }
+
+    function isUserValidFailed(errors)
+    {
+      console.error('problem checking if user is valid', errors);
+    }
+
+    function navigateHome()
+    {
+      $ionicHistory.nextViewOptions({
+        historyRoot: true // if successfully navigating to home page we want to make that the root page
+      });
+      $state.go('app.home');
     }
   }
 })();

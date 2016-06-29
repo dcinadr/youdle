@@ -6,16 +6,32 @@
       .module('youdle')
       .factory('introFactory', introFactory);
 
-    introFactory.$inject = ['$q', 'userLoginApiFactory', 'facebookLoginApiFactory', 'facebookFactory'];
+    introFactory.$inject = ['$q', 'userLoginApiFactory', 'facebookLoginApiFactory', 'facebookFactory', 'userFactory'];
 
-    function introFactory($q, userLoginApiFactory, facebookLoginApiFactory, facebookFactory)
+    function introFactory($q, userLoginApiFactory, facebookLoginApiFactory, facebookFactory, userFactory)
     {
         var service = {
             isUserValid: isUserValid,
             facebookLogin: facebookLogin,
+            backendlessFacebookLogin: backendlessFacebookLogin,
             getFacebookLoginStatus: getFacebookLoginStatus,
-            facebookInit: facebookInit
+            facebookInit: facebookInit,
+            getFacebookInfo: getFacebookInfo,
+            getUserProperties: getUserProperties
         };
+
+        function getUserProperties(objectId)
+        {
+          return userFactory.getUserProperties(objectId)
+            .then(function(response)
+            {
+              return response;
+            },
+            function(errors)
+            {
+              return $q.reject(errors);
+            })
+        }
 
         function facebookInit()
         {
@@ -43,7 +59,7 @@
             },
             function(errors)
             {
-              $q.reject(errors);
+              return $q.reject(errors);
             })
         }
 
@@ -56,7 +72,7 @@
             },
             function(errors)
             {
-              $q.reject(errors);
+              return $q.reject(errors);
             });
 
           // TODO - register facebook user in backendless
@@ -70,6 +86,32 @@
           //     {
           //         return $q.reject(errors);
           //     });
+        }
+
+        function backendlessFacebookLogin(accessToken)
+        {
+          return facebookFactory.backendlessLogin(accessToken)
+            .then(function(response)
+            {
+              return response;
+            },
+            function(errors)
+            {
+              return errors;
+            });
+        }
+
+        function getFacebookInfo()
+        {
+          return facebookFactory.api("me/?fields=email,first_name,last_name,gender,birthday", ["public_profile, user_birthday"])
+            .then(function(response)
+            {
+              return response;
+            },
+            function(errors)
+            {
+              return $q.reject(errors);
+            })
         }
 
         function getFacebookLoginParameters()
