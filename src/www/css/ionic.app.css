@@ -9735,7 +9735,8 @@ a.button {
   background-color: #009245;
   color: whitesmoke; }
 
-.home-div-card .item {
+.home-div-card
+.item {
   padding: 0px;
   border: 0px;
   background-color: transparent; }
@@ -9750,10 +9751,12 @@ a.button {
   padding: 0px;
   color: #009245; }
 
-.home-div-supplementalIcons div.col {
+.home-div-supplementalIcons
+div.col {
   padding: 0px; }
 
-.home-div-supplementalIcons i {
+.home-div-supplementalIcons
+i {
   float: right; }
 
 .home-button-option {
@@ -9771,7 +9774,8 @@ a.button {
 .home-div-cardHeaderRow {
   margin-bottom: 5px; }
 
-.home-div-cardHeaderRow i {
+.home-div-cardHeaderRow
+i {
   font-size: 20px; }
 
 .home-div-cardInfo {
@@ -9810,17 +9814,20 @@ a.button {
 .options .button {
   margin: 0px; }
 
-.home-div-results .col {
+.home-div-results
+.col {
   padding: 0px; }
 
-.home-div-results .option-text {
+.home-div-results
+.option-text {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   margin-right: 5px;
   font-size: smaller; }
 
-.home-div-results .percentage {
+.home-div-results
+.percentage {
   width: 0%;
   margin-left: 5px;
   font-size: smaller; }
@@ -9866,7 +9873,8 @@ a.button {
 .progress-top > progress::-webkit-progress-value {
   background-color: #009245; }
 
-.home .closing-date > div {
+.home
+.closing-date > div {
   float: right;
   font-size: x-small;
   margin-bottom: -5px; }
@@ -9954,7 +9962,8 @@ a.button {
 .login-header-image {
   margin-top: 20px; }
 
-.login-header-image img {
+.login-header-image
+img {
   width: 100%;
   max-width: 556px; }
 
@@ -9985,7 +9994,8 @@ a.button {
   color: whitesmoke;
   margin: 0 !important; }
 
-.login-form ::-webkit-input-placeholder {
+.login-form
+::-webkit-input-placeholder {
   color: lightgray; }
 
 :-ms-input-placeholder {
@@ -10018,21 +10028,25 @@ a.button {
 .css-form {
   margin-top: -10px; }
 
-.css-form .list {
+.css-form
+.list {
   margin: 0px;
   background: transparent; }
 
-.css-form label {
+.css-form
+label {
   margin-bottom: 10px;
   border-radius: 3px; }
 
-.css-form ::-webkit-input-placeholder {
+.css-form
+::-webkit-input-placeholder {
   color: lightgray; }
 
 :-ms-input-placeholder {
   color: lightgray; }
 
-.css-form input.ng-invalid.ng-touched {
+.css-form
+input.ng-invalid.ng-touched {
   /*background-color: pink;*/ }
 
 .signup-button-submit {
@@ -10104,11 +10118,13 @@ a.button {
   font-style: italic;
   font-family: 'Merienda', cursive; }
 
-.layout-nav-bar .title {
+.layout-nav-bar
+.title {
   font-weight: bold;
   font-size: x-large; }
 
-.layout-nav-bar .button {
+.layout-nav-bar
+.button {
   color: whitesmoke; }
 
 /*!
@@ -10126,7 +10142,7 @@ a.button {
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px / 1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;

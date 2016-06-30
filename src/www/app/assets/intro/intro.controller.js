@@ -50,15 +50,17 @@
       autoLogin();
     }
 
+    // user clicks facebook button
     vm.facebookClick = function ()
     {
       introFactory.facebookLogin()
         .then(facebookLoginSuccess, facebookLoginFailed);
     }
 
+    // login to facebook api success handler
     function facebookLoginSuccess(response)
     {
-      console.log('Log in to facebook successful.')
+      console.log('Log in to facebook successful.');
       console.log(response);
       var accessToken = response.authResponse.accessToken;
 
@@ -75,46 +77,34 @@
         function(errors)
         {
           console.error('Backendless facebook login failed!', errors);
+          loggerFactory.error('com.youdle.intro', 'Backendless facebook login failed!  Errors: ' + errors);
           // TODO - handle error / display to user
         })
     }
 
+    // login to facebook api failure handler
     function facebookLoginFailed(errors)
     {
       // TODO - display error message back to user
-      console.error('Log in to facebook failed.');
-      console.error(errors);
-    }
-
-    function getFacebookLoginStatus()
-    {
-      introFactory.getFacebookLoginStatus()
-        .then(function(response)
-        {
-          // TODO
-          console.log(response);
-        },
-        function(errors)
-        {
-          // TODO
-          console.error(errors);
-        })
+      loggerFactory.error('com.youdle.intro', 'Log in to facebook failed.  Errors: ' + errors);
+      console.error('Log in to facebook failed.', errors);
     }
 
     // if the user has already logged in previously automatically login the user in
     function autoLogin()
     {
-      console.log('Checking current login status for auto login...')
+      console.log('Checking current login status for auto login...');
       var userToken = localStorageFactory.get('userToken');
       if (!userToken)
       {
-        console.log('User not currently logged in.')
+        console.log('User not currently logged in.');
         return;
       }
       introFactory.isUserValid(userToken)
         .then(isUserValidSuccess, isUserValidFailed);
     }
 
+    // check to see if user is valid success handler
     function isUserValidSuccess(response)
     {
       if (response.data)
@@ -127,8 +117,15 @@
       }
       else
       {
-        console.log('User is not currently valid in backendless.  Not allowing auto login access.')
+        console.log('User is not currently valid in backendless.  Not allowing auto login access.');
       }
+    }
+
+    // check to see if user is valid failed handler
+    function isUserValidFailed(errors)
+    {
+      loggerFactory.error('com.youdle.intro', 'Request for user validity failed!  Errors: ' + errors);
+      console.error('problem checking if user is valid', errors);
     }
 
     function getUserPropertiesSuccess(response)
@@ -140,7 +137,7 @@
       }
       else
       {
-        console.log('User is a valid email user.  Allowing access.')
+        console.log('User is a valid email user.  Allowing access.');
         var userObjectId = localStorageFactory.get('userObjectId');
         loggerFactory.info('com.youdle.intro', 'email user returning with valid user token.  userObjectId: ' + userObjectId);
         navigateHome();
@@ -151,7 +148,7 @@
     {
       if (response.status == 'connected')
       {
-        console.log('User is also connected to facebook.  Allowing access.')
+        console.log('User is also connected to facebook.  Allowing access.');
         var userObjectId = localStorageFactory.get('userObjectId');
         loggerFactory.info('com.youdle.intro', 'facebook user returning with valid user token.  userObjectId: ' + userObjectId);
         navigateHome();
@@ -160,17 +157,14 @@
 
     function getFacebookLoginStatusFailed(errors)
     {
-      console.error('Failure checking facebook login status.', errors)
+      console.error('Failure checking facebook login status.', errors);
+      loggerFactory.error('com.youdle.intro', 'Failure checking facebook login status!  Errors: ' + errors);
     }
 
     function getUserPropertiesFailed(errors)
     {
       console.error('Failure retrieving user properties.', errors);
-    }
-
-    function isUserValidFailed(errors)
-    {
-      console.error('problem checking if user is valid', errors);
+      loggerFactory.error('com.youdle.intro', 'Failure requesting user properties!  Errors: ' + errors);
     }
 
     function navigateHome()
