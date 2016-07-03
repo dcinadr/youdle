@@ -1,6 +1,29 @@
 .login-view
 {
   background: linear-gradient($balanced, white 30%);
+
+  ion-content > div
+  {
+    height: 100%;
+  }
+
+  .signup
+  {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+
+  .signup > div
+  {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .signup button
+  {
+    background-color: $energized;
+  }
 }
 
 .login-header-image

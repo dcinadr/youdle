@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('youdle', [
   'ionic',
+  'ngCordova',
   'youdle.api',
   'youdle.service',
   'oc.lazyLoad'

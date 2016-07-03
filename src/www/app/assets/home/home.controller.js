@@ -6,9 +6,9 @@
     .module('youdle')
     .controller('homeController', homeController);
 
-  homeController.$inject = ['homeFactory', 'localStorageFactory', 'loggerFactory'];
+  homeController.$inject = ['homeFactory', 'localStorageFactory', 'loggerFactory', 'toastFactory'];
 
-  function homeController(homeFactory, localStorageFactory, loggerFactory) {
+  function homeController(homeFactory, localStorageFactory, loggerFactory, toastFactory) {
 
     var vm = this;
     vm.title = 'Home';
@@ -26,6 +26,8 @@
             console.error('problem loading cards', errors);
           }
         );
+
+        toastFactory.showLongBottom('My toast test!');
     }
 
     vm.selectOption = function(card, option) {

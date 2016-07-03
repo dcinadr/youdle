@@ -5,15 +5,26 @@
     .module('youdle')
     .controller('introController', introController);
 
-  introController.$inject = ['localStorageFactory', 'introFactory', '$state', 'loggerFactory', '$ionicHistory', '$interval'];
+  introController.$inject = ['localStorageFactory', 'introFactory', '$state', 'loggerFactory', '$ionicHistory', '$interval', '$ionicPlatform'];
 
-  function introController(localStorageFactory, introFactory, $state, loggerFactory, $ionicHistory, $interval) {
+  function introController(localStorageFactory, introFactory, $state, loggerFactory, $ionicHistory, $interval, $ionicPlatform) {
     var vm = this;
     var facebookCheck;
 
     vm.activate = function ()
     {
-      startFacebookCheck();
+      $ionicPlatform.ready(function() {
+        if (window.cordova)
+        {
+          // for phone/cordova
+          initializeFacebook();
+        }
+        else
+        {
+          // for browser
+          startFacebookCheck();
+        }
+      });
     }
 
     vm.activate();
