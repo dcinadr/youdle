@@ -10018,6 +10018,10 @@ img {
 
 .signup-view {
   background: linear-gradient(#0071BC, white 70%); }
+  .signup-view form .validation {
+    position: absolute;
+    z-index: 100;
+    width: 100%; }
 
 .signup-title-div {
   margin-top: 10px; }

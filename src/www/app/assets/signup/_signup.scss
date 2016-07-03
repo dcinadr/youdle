@@ -1,6 +1,14 @@
 .signup-view
 {
   background: linear-gradient($balanced, white 70%);
+
+  form .validation
+  {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+  }
+
 }
 
 .signup-title-div
@@ -106,7 +114,7 @@ input.ng-invalid.ng-touched
 .input-border-valid {
     outline: none;
     box-shadow: 0 0 10px lawngreen;
-    
+
 }
 
 
@@ -124,8 +132,8 @@ input.ng-invalid.ng-touched
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    
-    
+
+
 
 }
 .callout .notch {
