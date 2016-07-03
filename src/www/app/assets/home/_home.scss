@@ -122,6 +122,14 @@ i
   margin: 0px;
 }
 
+// adjusts the default "col-50" style so that content fits better
+.home-div-results .col-50
+{
+  -webkit-flex: 0 0 45% !important;
+  flex: 0 0 45% !important;
+  max-width: 45% !important;
+}
+
 .home-div-results
 .col
 {

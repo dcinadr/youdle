@@ -9814,6 +9814,11 @@ i {
 .options .button {
   margin: 0px; }
 
+.home-div-results .col-50 {
+  -webkit-flex: 0 0 45% !important;
+  flex: 0 0 45% !important;
+  max-width: 45% !important; }
+
 .home-div-results
 .col {
   padding: 0px; }

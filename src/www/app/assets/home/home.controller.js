@@ -27,7 +27,7 @@
           }
         );
 
-        toastFactory.showLongBottom('My toast test!');
+        //toastFactory.showLongBottom('My toast test!');
     }
 
     vm.selectOption = function(card, option) {
