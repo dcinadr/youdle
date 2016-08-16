@@ -25,9 +25,18 @@
     {
       "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
       "id": "cordova-plugin-x-toast"
+    },
+    {
+      "locator": "https://github.com/Wizcorp/phonegap-facebook-plugin.git",
+      "id": "phonegap-facebook-plugin",
+      "variables": {
+          "APP_ID": "1066959203376447",
+          "APP_NAME": "Youdle"
+      }
     }
   ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ]
 }

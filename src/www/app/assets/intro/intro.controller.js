@@ -64,6 +64,7 @@
     // user clicks facebook button
     vm.facebookClick = function ()
     {
+      console.log('logging in to facebook...');
       introFactory.facebookLogin()
         .then(facebookLoginSuccess, facebookLoginFailed);
     }
