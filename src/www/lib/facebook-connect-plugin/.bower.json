@@ -6,7 +6,7 @@
   },
   "_release": "e-tag:W/\"c6afb16",
   "main": "index.js",
-  "_source": "https://cdn.rawgit.com/Wizcorp/phonegap-facebook-plugin/master/facebookConnectPlugin.js",
+  "_source": "https://cdn.jsdelivr.net/gh/Wizcorp/phonegap-facebook-plugin/facebookConnectPlugin.js",
   "_target": "*",
-  "_originalSource": "https://cdn.rawgit.com/Wizcorp/phonegap-facebook-plugin/master/facebookConnectPlugin.js"
+  "_originalSource": "https://cdn.jsdelivr.net/gh/Wizcorp/phonegap-facebook-plugin/facebookConnectPlugin.js"
 }
